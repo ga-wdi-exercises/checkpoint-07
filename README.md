@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+NoSQL DB doesn't have any relationships or schema. NoSQL DB are great for fast, small, robust data systems where you don't need any relationships (no one-to-one, one-to-many) and all the data is in one place. SQL is built around relationships - you should use SQL when you have data that
 
 ```
 
@@ -22,7 +22,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+There isnt any callback in where we can send the results to.
+
 ```
 
 ### Question #3
@@ -35,7 +36,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Model.findOneAndUpdate(name: "Andy", {wishlist_items: "Resin Laying Deer Figurine, Gold"})
+
 ```
 
 ### Question #4
@@ -52,7 +54,9 @@ author.save(function(err){
 ```
 
 ```rb
+author = Author.new(name: "Janet") // to create a new instance of Artist object
 
+author.save // to save to our database
 ```
 ## Express
 
@@ -61,7 +65,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+We use this line to make our file 'exportable', meaning we can call the file from anywhere else in our application, as a global variable.
 ```
 
 ### Question #6
@@ -74,7 +78,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  res.send("Hello, get")
+})
+
+app.post("/:id", (req, res) => {
+  res.send("hello, post")
+})
+
+app.put("/:id", (req, res) => {
+  res.send("hello, put")
+})
+
+app.delete("/hello/:id", (req, res) => {
+  res.send("Hello, delete")
+})
 
 ```
 
@@ -83,7 +101,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+There really isn't any difference - both are backends that make creating APIs quick and easy. I would say that Express is lighter and maybe faster than Rails but I don't think there's too much of a difference beyond personally preference.
 ```
 
 ### Question #8
@@ -97,7 +115,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+on the first line, the package Body Parser is called to be required and being saved as a var bodyParser
+The 2nd line makes bodyparser handles json post requests, this can have many options but there isn't being used on this line.
+The last line is optional - this configures the parser to support html forms. The urlencoded takes options as well, The extended option allows to choose between parsing the URL-encoded data with the querystring library (when false) or the qs library (when true).
 ```
 
 ### If you finish early...
