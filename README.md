@@ -6,10 +6,7 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
-
-```
+NoSQL is non-relational database that stores data into documents and collections， while SQL stores data in a relational model with rows and columns. NoSQL will be better to use if the data needs are changing rapidly, and SQL can be used when the data is not changing in structure.
 
 ### Question #2
 
@@ -22,7 +19,9 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+The author model probably does not have the author schema.
+var Author = mongoose.model("Author", AuthorSchema)
+Author.find({name: "Bob"})
 ```
 
 ### Question #3
@@ -35,7 +34,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.find_by({name: "Andy"})
+Instructor.create({description:"Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question #4
@@ -60,8 +60,8 @@ author.save(function(err){
 
 What is module.exports and why do we use it?
 
-```text
-
+```
+module.exports allows us to separate our js files by exposing their contents as one global variable. We assign it when we require the file.
 ```
 
 ### Question #6
@@ -74,16 +74,36 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  res.render("index")
+})
 
+app.post("/candidates", (req, res) => {
+  Candidate.create(req.body).then((candidate)=>{
+    res.render("new")
+  })
+})
+
+app.put("/candidates/:name", (req, res) => {
+  Candidate.findOneAndUpdate({req.params.name.}, req.body, {new: true}).then((candidate) => {
+    res.render("update")
+  })
+}
+})
+
+app.delete("/candidates/:name", (req,res) => {
+  Candidate.findOneAndRemove({name: req.params.name}).then(() =>{
+    res.render("index")
+  })
+})
 ```
 
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
-
+```
+Rails is written in ruby and Express is written in js.
 ```
 
 ### Question #8
