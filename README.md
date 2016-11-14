@@ -75,25 +75,25 @@ var express = require("express");
 var app = express();
 
 app.get("/", (req, res) => {
-  res.rend("index")
+  res.render("index")
 })
 
-app.post("/api/candidates", (req, res) => {
+app.post("/candidates", (req, res) => {
   Candidate.create(req.body).then((candidate)=>{
-    res.json(candidate)
+    res.render("new")
   })
 })
 
-app.put("/api/candidates/:name", (req, res) => {
+app.put("/candidates/:name", (req, res) => {
   Candidate.findOneAndUpdate({req.params.name.}, req.body, {new: true}).then((candidate) => {
-    res.json(candidate)
+    res.render("update")
   })
 }
 })
 
-app.delete("/ap/cndidates/:name", (req,res) => {
+app.delete("/candidates/:name", (req,res) => {
   Candidate.findOneAndRemove({name: req.params.name}).then(() =>{
-    res.json({success: true})
+    res.render("index")
   })
 })
 ```
