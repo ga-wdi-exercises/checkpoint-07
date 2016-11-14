@@ -8,7 +8,7 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 
 ```text
 Your answer...
-
+SQL database, it’s impossible to add data until you define tables and field types in what’s referred to as a schema(relational databases), but  NoSQL database, data can be added anywhere, at any time(non-relational database, but document-based stores).
 ```
 
 ### Question #2
@@ -23,7 +23,9 @@ console.log(results);
 
 ```js
 // Your answer...
-```
+```It needs a callback;
+results.select('name first');
+
 
 ### Question #3
 
