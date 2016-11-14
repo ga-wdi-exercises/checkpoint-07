@@ -39,7 +39,7 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-@andy = Instructor.findOne({"name": "Andy"},{$push:{"description": "Resin Laying Deer Figurine, Gold"}})
+var andy = Instructor.findOne({"name": "Andy"},{$push:{"description": "Resin Laying Deer Figurine, Gold"}})
 ```
 
 ### Question #4
@@ -56,7 +56,10 @@ author.save(function(err){
 ```
 
 ```rb
+@author = Author.new(name: params[:name])
+@author.save!
 
+or @author = Author.create!(name: params[:name])
 ```
 ## Express
 
