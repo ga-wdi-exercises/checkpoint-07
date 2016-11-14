@@ -39,7 +39,7 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+@andy = Instructor.findOne({"name": "Andy"},{$push:{"description": "Resin Laying Deer Figurine, Gold"}})
 ```
 
 ### Question #4
