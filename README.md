@@ -95,8 +95,12 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 ```
 
-```text
-Your answer here
+```
+Body Parser extracts the body portion of an incoming request stream and exposes it on req.body to make it easier to use the information.
+
+Parses the text as JSON and exposes the resulting object on req.body.
+
+Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST) and exposes the resulting object (containing the keys and values) on req.body.
 ```
 
 ### If you finish early...
