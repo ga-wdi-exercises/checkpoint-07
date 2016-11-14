@@ -6,7 +6,7 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-NoSQL is non-relational database that stores data into documents and collections， while SQL stores data in a relational model with rows and columns. NoSQL will be better to use if the data needs are changing rapidly, and SQL can be used when the data is not changing in structure. 
+NoSQL is non-relational database that stores data into documents and collections， while SQL stores data in a relational model with rows and columns. NoSQL will be better to use if the data needs are changing rapidly, and SQL can be used when the data is not changing in structure.
 
 ### Question #2
 
@@ -19,7 +19,9 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+The author model probably does not have the author schema.
+var Author = mongoose.model("Author", AuthorSchema)
+Author.find({name: "Bob"})
 ```
 
 ### Question #3
