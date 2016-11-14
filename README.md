@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL databases are relational, whereas NoSQL databases are non-relational.  You would use NoSQL databases when the data it contains doesn't have the same type of properties.  SQL would be used when you have data with the same type of properties.
 ```
 
 ### Question #2
