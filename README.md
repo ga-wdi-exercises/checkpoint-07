@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+NoSQL, like SQL, stores data but is a flexible alternative. You might use NoSQL if you have a less data pieces to work with. For example, information limited to just a book and author might be better suited for a NoSQL DB. But if one were to scale and create further models and associations, SQL would be better suited. It all depends on the data requirements.
 ```
 
 ### Question #2
@@ -22,7 +21,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+No idea, I will research.
 ```
 
 ### Question #3
@@ -35,7 +34,7 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Some idea, but I will research.
 ```
 
 ### Question #4
@@ -52,7 +51,7 @@ author.save(function(err){
 ```
 
 ```rb
-
+No idea. I will research.
 ```
 ## Express
 
@@ -61,7 +60,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+It allows a block of code to be used in other files.
 ```
 
 ### Question #6
@@ -74,7 +73,7 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+Need to review and research all things Express.
 
 ```
 
@@ -83,7 +82,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails has more helpful error messaging. Express is apparently faster. Will research this more.
 ```
 
 ### Question #8
@@ -97,7 +96,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+Parses the body as JSON.
 ```
 
 ### If you finish early...
