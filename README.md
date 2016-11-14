@@ -21,8 +21,7 @@ console.log(results);
 ```
 
 ```js
-var results = AuthorModel.find({name: "Bob"});
-console.log(results);
+you need to make a callback first!
 ```
 
 ### Question #3
