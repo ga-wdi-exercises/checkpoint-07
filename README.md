@@ -6,8 +6,8 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
+```
+SQL DBs have information that are placed into table and to reference/link information between tables you create a relationship between them. NoSQL DBs do not have tables, are faster, do not have relationships, and have a data limit.
 
 ```
 
@@ -22,7 +22,9 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"} function(err, students){
+  console.log(students);
+})
 ```
 
 ### Question #3
@@ -35,7 +37,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findByOne({name: "Andy"})
+  .then(req.params.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"}))
 ```
 
 ### Question #4
@@ -52,6 +55,11 @@ author.save(function(err){
 ```
 
 ```rb
+author = Author.create({
+  name: "mark"
+  }
+  redirect_to authors path
+  )
 
 ```
 ## Express
@@ -60,7 +68,9 @@ author.save(function(err){
 
 What is module.exports and why do we use it?
 
-```text
+```
+it allows us to export information from a file so we can say
+"var x = require('module.export name')" and use that information in other files
 
 ```
 
@@ -74,7 +84,27 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/posts", function(req, res){
+
+})
+
+app.post("/posts", function(req, res){
+  Post.create(req.body.post).then(function(post){
+    res.redirect("/posts/" + post.name)
+  })
+})
+
+app.post("/posts/:name", function(req, res){
+  Post.findOneAndUpdate({name: req.params.name}, req.body.post, {new: true}).then({
+    res.redirect("/posts/" + post.name)
+  })
+})
+
+app.post("/posts/:name", function(req, res){
+  Post.findOneAndRemove({name: req.params.name}).then({
+    res.redirect("/posts")
+  })
+})
 
 ```
 
@@ -82,8 +112,8 @@ var app = express();
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
-
+```
+Rails is opinionated and wants you to organize files in a very specific way. Express does not care about how you organize your files.
 ```
 
 ### Question #8
@@ -97,7 +127,11 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+var bodyParser requires the bodyParser module
+bodyParser.json converts data into a json object
+urlencoded lets configure the parser to support html forms
+
+
 ```
 
 ### If you finish early...
