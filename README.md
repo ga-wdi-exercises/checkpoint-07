@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+A SQL database organizes information into tables that are connected to one another through relationships (i.e. a SQL database is relational) and enforces a strict structure via table schemas. The information inside a noSQL database is not organized through relationships and is not necessarily normalized through the use of schemas. A NoSQL database would be good to use when you may have non-uniform data or are prototyping (faster/easier to set up).
 
 ```
 
