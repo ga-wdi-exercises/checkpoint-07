@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+a NoSql DB is a non-relational database as to where a SQL DB it is relation based such as one-one, one to many or many to many.  SQL are also table based as to NoSQL is document based, key value pairs, graph dB, or column stores.
+
+You would use NoSQL if you were using a hierarchial data storage and a lot of data. SQL is good for a complex query.
 
 ```
 
