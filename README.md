@@ -6,8 +6,7 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
+```SQL databases are "relational" and use tables for for the data where NoSql databases are "non-relational" and document based. A project where SQL would be ideal is when you want your data to have relationships or is not going to be represented correctly from just key value pairs.  NoSql is best for projects where your data may change over the course of development since there is no rigid schema.
 
 ```
 
