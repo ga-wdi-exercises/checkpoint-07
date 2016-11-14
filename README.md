@@ -114,7 +114,7 @@ app.listen(3000)
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Express is a node back-end framework that is written in Javascript, does not strictly enforce conventions, and is more light-weight in terms of file-structure. Rails is a back-end framework written in Ruby that does more strictly enforce certain conventions and is heavy in terms of file-structure. 
+Express is a node back-end framework that is written in Javascript, does not strictly enforce conventions, and is more light-weight in terms of file-structure. Rails is a back-end framework written in Ruby that does more strictly enforce certain conventions and is heavy in terms of file-structure.
 ```
 
 ### Question #8
@@ -128,7 +128,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+The above code gives express access to the body-parser node module which allows express to access information passed to it through the parameter body (usually information from a form or some other user input).
 ```
 
 ### If you finish early...
