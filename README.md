@@ -110,7 +110,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+We need to install middleware in order to get form data and JSON data in a POST request for express applications.  The solution is body parser.
 ```
 
 ### If you finish early...
