@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL databases are relational databases comprised of tables, whereas NoSQL are non-relational comprised of documents. One might prefer NoSQL when data consistency is not a priority, and therefore the flexibility of non-relational data structures would be optimal.
 ```
 
 ### Question #2
@@ -22,7 +21,11 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+// You need a callback function to persist the data and actually do something with it:
+var results = AuthorModel.findOne({name: "Bob"}, function(){
+  console.log(results);
+});
+
 ```
 
 ### Question #3
@@ -35,7 +38,9 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+People.findOne({name: "Andy"}, function(andy){
+  andy.wishlistItems.create({description: "Resin Laying Deer Figurine, Gold"})
+
 ```
 
 ### Question #4
@@ -52,6 +57,7 @@ author.save(function(err){
 ```
 
 ```rb
+author = Author.new(params[:name])
 
 ```
 ## Express
@@ -61,6 +67,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
+This exports the variables or portions of code from one file so that it can be used from another file. For example, you would export the model in order that it would be accessible from another file containing your app code.
 
 ```
 
@@ -74,7 +81,37 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+
+
+app.get("/things", function(req, res) {
+  Thing.find({}).then(function(things){
+    res.render("things-index", {
+      things: things
+    })
+  })
+})
+
+app.get("/things/:name", function(req, res) {
+  Thing.findOne({thing: req.params.name}).then(function(thing){
+    res.render("things-show", {
+      thing: thing
+    })
+  })
+})
+
+app.post("/things/specific/delete", function(req, res) {
+  Thing.findOneAndRemove({name: req.params.name}).then(function(){
+    res.redirect("/things")
+  })
+})
+
+app.post("/things/specific", function(req, res) {
+  Things.findOneAndUpdate({name: req.params.name}, req.body.thing, {new: true}).then(function(){
+    res.redirect("/things" + thing.name)
+  })
+})
+
+
 
 ```
 
@@ -83,7 +120,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Aside from the fact that Express runs from a non-relational database (MongoDB), and (to my knowledge) Rails runs on relational ones (like PostgresQL or SQL), Express is unopininated, meaning it doesn't adhere to the convention over configuration mindset that is the backbone of Rails. Instead, Express allows greater freedom for developers to structure their programs/apps as they see fit. While this can (and often does) lead to complications for collaboration and restructuring, it can be a better fit for developers looking to innovate and diverge from the hive-mind approach of the greater web development community.
 ```
 
 ### Question #8
@@ -97,7 +134,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+This code sets you up to `npm install body-parser`, which is middleware needed to get form data and JSON data in a POST request for express applications. As mentioned above, a body-parser (RACK) is included with Rails out of the box, but unopinionated Express no longer includes in original package.
 ```
 
 ### If you finish early...
