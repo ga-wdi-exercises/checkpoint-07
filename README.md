@@ -21,7 +21,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = mongoose.model('Bob', AuthorModel);
 ```
 
 ### Question #3
