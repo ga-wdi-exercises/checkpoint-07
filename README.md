@@ -96,7 +96,7 @@ app.delete('/user', function (req, res) {
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Unlike Rails, Express isn't opionated.  Express uses client-side JavaScript.
 ```
 
 ### Question #8
