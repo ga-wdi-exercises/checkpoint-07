@@ -24,7 +24,14 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+// var authorsController = {
+show(req){
+  Author.findOne({name: req.name}, (err, author) => {
+    console.log(author);
+  })
+}
+}
+authorsController.show({name: "bob"});
 ```
 
 ### Question #3
