@@ -59,7 +59,7 @@ author.save(function(err){
 
 What is module.exports and why do we use it?
 
-```text
+```It allows us to export code from one file to another. We can export part of it or all of it.
 
 ```
 
