@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL databases are relational, whereas NoSQL databases are non-relational.  You would use NoSQL databases when the data it contains doesn't have the same type of properties.  SQL would be used when you have data with the same type of properties.
 ```
 
 ### Question #2
@@ -22,7 +21,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = mongoose.model('Bob', AuthorModel);
 ```
 
 ### Question #3
@@ -61,7 +60,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+Module.exports takes all functions related to a specific line of code and places it into a file.
 ```
 
 ### Question #6
@@ -74,7 +73,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get('/', function (req, res) {
+  res.send('GET request to the homepage')
+})
+
+app.post('/', function (req, res) {
+  res.send('POST request to the homepage')
+})
+
+app.put('/user', function (req, res) {
+  res.send('Got a PUT request at /user')
+})
+
+app.delete('/user', function (req, res) {
+  res.send('Got a DELETE request at /user')
+})
 
 ```
 
@@ -83,7 +96,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Unlike Rails, Express isn't opionated.  Express uses client-side JavaScript.
 ```
 
 ### Question #8
@@ -97,7 +110,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+We need to install middleware in order to get form data and JSON data in a POST request for express applications.  The solution is body parser.  The lines of code do the following, configure app to use body parser, handle Json post request, and handles form submissions.
 ```
 
 ### If you finish early...
