@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL, short for sequel, describes a relational database.  It is useful for more complex, schematic data.  When more flexibility is required in the construction of each document, a noSQL db is more suited.
 ```
 
 ### Question #2
@@ -22,7 +21,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
@@ -35,7 +35,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var Andy = Instructor.findOne({name: "Andy"})
+Andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question #4
@@ -52,7 +53,8 @@ author.save(function(err){
 ```
 
 ```rb
-
+@author = Author.new(name: params[:name])
+@author.save
 ```
 ## Express
 
@@ -61,7 +63,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+module.exports defines the code that is exported to the next document.  For example, if we set module.exports to mongoose, that variable alone, including all changes we make to it in the course of our js, will be carried over where it is called. Not well explained, sorry, but I know how to use it. Happy Monday.
 ```
 
 ### Question #6
@@ -75,7 +77,18 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
-
+app.get('/', (req, res) => {
+  res.send("get")
+})
+app.post('/', (req, res) => {
+  res.send("post")
+})
+app.update('/', (req, res) => {
+  res.send("update")
+})
+app.delete('/', (req, res) => {
+  res.send("delete")
+})
 ```
 
 ### Question #7
@@ -83,7 +96,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+First is the language that each is written in. Also, Rails is opinionated and Express is the wild West.
 ```
 
 ### Question #8
@@ -97,7 +110,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+Body-parser allows us to grab the content of forms and use it with req.body.  The line containing json sets its return as a json object, and urlencoded({extended: true}) allows us to use the 'querystring' library on it, rather than 'qs' library. This allows for rich objects and arrays, for an end object more similar to json.
 ```
 
 ### If you finish early...
