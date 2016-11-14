@@ -38,6 +38,11 @@ Convert the following ActiveRecord sequence to Mongoose:
 
 ```js
 // Your answer...
+andy = Instructor.find({name: "Andy"})
+@andy.wishlist_items.create({ description: "Resin Laying Deer Figurine, Gold"}, function (err, small) {
+  if (err) return handleError(err);
+  // saved!
+})
 ```
 
 ### Question #4
@@ -55,6 +60,7 @@ author.save(function(err){
 
 ```rb
 
+Author.create(:name => 'John')
 ```
 ## Express
 
@@ -64,6 +70,7 @@ What is module.exports and why do we use it?
 
 ```text
 
+module.exports -- is a variable that represents current module and exports is an object that will be exposed as a module
 ```
 
 ### Question #6
@@ -79,13 +86,29 @@ var app = express();
 // Your code starts here...
 
 ```
+app.use()
+app.get('/', function(req, res) {
+  res.json('users');
+});
+app.get('/user/:id', function(req, res) {
+  res.json('user')
+)};
+
+app.post('/users', function(req, res) {
+  res.json('user');
+
+  User.create(req.body.user).then(function(user){
+    es.redirect('/users' + user.name);
+    })
+  });
+app.listen(process.env.PORT || 3001);
 
 ### Question #7
 
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Ruby is slow but performs better, Express(Node.js) is very powerfull, however if the application throws an error the whole application can crash.
 ```
 
 ### Question #8
@@ -100,6 +123,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 ```text
 Your answer here
+
+bodyParser is a part of "Connect", a set of middlewares for node.js.
 ```
 
 ### If you finish early...
