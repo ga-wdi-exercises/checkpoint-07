@@ -22,7 +22,12 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, function (err, docs){
+  if(err)
+console.log("Action cannot be completed")});
+console.log(docs);
+});
+
 ```
 
 ### Question #3
