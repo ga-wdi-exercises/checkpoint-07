@@ -76,7 +76,7 @@ redirect_to authors_path
 What is module.exports and why do we use it?
 
 ```text
-
+module.exports is an express method that allows us to break our code into different files (making it easier to manage) and export that code to other files where it is needed (i.e. it makes our code more 'modular'). To import the exported code in another file we would write var import = require('./url') where url is the url of the exporting file. 
 ```
 
 ### Question #6
