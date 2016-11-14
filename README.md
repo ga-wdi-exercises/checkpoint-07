@@ -83,7 +83,27 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", (req, res) => {
+  res.render("hello pizza")
+})
 
+app.post("/pizza", (req, res) =>{
+  Pizza.create(req.body.pizza).then( pizza => {
+    res.redirect("/pizza/" + pizza.type)
+  })
+})
+
+app.post("/pizza/:type", (req, res) => {
+  Pizza.findOneAndUpdate({type: req.params.type}, req.body.pizza, {new: true}). then ( pizza =>{
+    res.redirect("/pizza/" + pizza.type)
+  })
+})
+
+app.post("/pizza/:type/delete", (req, res) => {
+  Pizza.findOneAndRemove({type: req.params.type}).then (pizza =>{
+    res.redirect("/pizza")
+  })
+})
 ```
 
 ### Question #7
