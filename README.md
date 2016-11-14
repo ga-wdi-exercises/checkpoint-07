@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are used when there are relationships involved, i.e. doctors and patients. It stands for Structured Query Language.  NoSQL is used when there is not a relationship between the data and you just want to store it.  For NoSQL you would use collections instead of tables. 
 
 ```
 
