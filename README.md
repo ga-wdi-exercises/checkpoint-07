@@ -49,10 +49,10 @@ author.save(function(err){
     res.redirect("authors")
   }
 })
-```
-
 ```rb
-
+@author = Author.new
+@author = Author.create(author_params)
+redirect_to authors_path
 ```
 ## Express
 
@@ -72,7 +72,26 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get('/', function(req,res) => {
+  res.send("Get")
+})
+
+app.post('/:type', function(req,res) => {
+  res.render("post",
+  puppies
+)
+})
+
+app.put('/:type', function(req, res) => {
+  res.render("update",
+  puppy)
+  })
+
+app.delete('/:type', function(req,res) => {
+  Puppy.findOneAndRemove(req.body.puppy)
+  res.send("delete")
+  res.redirect('/')
+  })
 
 ```
 
@@ -80,7 +99,7 @@ var app = express();
 
 Describe the differences between Express and Rails as backend frameworks.
 
-Express is written runs on node.js and is written in javascript.  Rails is written in Ruby and uses embedded ruby files not html.  Rails talks to ActiveRecord while Express talks to mongoose.  
+Express is runs on node.js and is written in javascript.  Rails is written in Ruby and uses embedded ruby files not html.  Rails talks to ActiveRecord while Express talks to mongoose.  
 
 ### Question #8
 
@@ -93,7 +112,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 Body Parser is used when you want to submit a post request and form in express. It creates middleware.
-"var bodyParser = require("body-parser")" is requiring or adding body-parser to the file and "app.use(bodyParser.json())" is allowing json to be rendered. It returns middleware that only parses json. "app.use(bodyParser.urlencoded({extended: true}))" returns middleware that only parses urlencoded bodies.  
+"var bodyParser = require("body-parser")" is requiring or adding body-parser to the file and "app.use(bodyParser.json())" is allowing json to be rendered. It returns middleware that only parses json. "app.use(bodyParser.urlencoded({extended: true}))" returns middleware that only parses urlencoded bodies. The extended option allows you to choose between parsing the URL-encoded data with the query-string library when false, or the qs library when true.
 
 ### If you finish early...
 
