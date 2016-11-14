@@ -8,7 +8,9 @@ Describe the differences between a SQL and NoSQL DB, and when you might use each
 
 ```text
 Your answer...
+SQL - A relation (table) in a relational database is divided into set of rows and columns. A Tuple stands for a row in a database table that is retrieved using a query.
 
+NoSQL-it may not require fixed table schemas, usually avoid join operations, and typically scale horizontally.
 ```
 
 ### Question #2
@@ -22,7 +24,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+AuthorModel.findOne({name: "Bob"}, function)
 ```
 
 ### Question #3
@@ -35,7 +37,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.find({name: 'Andy'});
+
 ```
 
 ### Question #4
@@ -52,7 +55,9 @@ author.save(function(err){
 ```
 
 ```rb
-
+@author = Author.find(params[:id])
+@author.update(author_params)
+redirect_to @author
 ```
 ## Express
 
@@ -61,7 +66,8 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+moduele.exports is the returned object, when the require call is submitted.
+The use  is that you set properties on the exports object in a .js file that you then import using require().
 ```
 
 ### Question #6
@@ -83,7 +89,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Not alot differences, rails have more files to to keep up with. Express is little fast than rails. Rails uses ruby and express uses node.js. But both gives same result.
 ```
 
 ### Question #8
@@ -97,7 +103,17 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+var bodyParser = require("body-parser")
+= The bodyParser object exposes various factories to create middlewares. All middlewares will populate the req.body property with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned).
+
+
+app.use(bodyParser.json())
+= The json function takes an option options object
+
+
+app.use(bodyParser.urlencoded({extended: true}))
+= Returns middleware that only parses urlencoded bodies.
+
 ```
 
 ### If you finish early...
