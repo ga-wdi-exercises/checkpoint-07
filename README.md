@@ -22,7 +22,13 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+// The mongoose .find query is used to retrieve multiple documents from a database based on a given condition. The above code would return an array of author models (although there may only be one result in that array). Additionally, 'results' in the above example is currently storing only the query, not the output of the query (for which a callback or promise would be necessary). The correct code for retrieving a single document and storing it to a variable is:
+var result
+AuthorModel.findOne({name: "Bob"}).then((author) => {
+  result = author
+}).catch((error) => {
+  console.log(error)
+})
 ```
 
 ### Question #3
