@@ -110,7 +110,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-We need to install middleware in order to get form data and JSON data in a POST request for express applications.  The solution is body parser.
+We need to install middleware in order to get form data and JSON data in a POST request for express applications.  The solution is body parser.  The lines of code do the following, configure app to use body parser, handle Json post request, and handles form submissions.
 ```
 
 ### If you finish early...
