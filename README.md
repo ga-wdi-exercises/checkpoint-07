@@ -68,6 +68,7 @@ or @author = Author.create!(name: params[:name])
 What is module.exports and why do we use it?
 
 ```text
+module.exports allows us to use variables we've defined in one js file to another js file as long as we require that specific js file that has the exports. It allows for cleaner management of js code within your js application.
 
 ```
 
