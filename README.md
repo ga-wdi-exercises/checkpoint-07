@@ -61,7 +61,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```
-module.exports allows us to separate our js files by exposing their contents as one global variable. We assign it when we require the file. 
+module.exports allows us to separate our js files by exposing their contents as one global variable. We assign it when we require the file.
 ```
 
 ### Question #6
@@ -74,8 +74,28 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  res.rend("index")
+})
 
+app.post("/api/candidates", (req, res) => {
+  Candidate.create(req.body).then((candidate)=>{
+    res.json(candidate)
+  })
+})
+
+app.put("/api/candidates/:name", (req, res) => {
+  Candidate.findOneAndUpdate({req.params.name.}, req.body, {new: true}).then((candidate) => {
+    res.json(candidate)
+  })
+}
+})
+
+app.delete("/ap/cndidates/:name", (req,res) => {
+  Candidate.findOneAndRemove({name: req.params.name}).then(() =>{
+    res.json({success: true})
+  })
+})
 ```
 
 ### Question #7
