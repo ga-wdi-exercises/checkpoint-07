@@ -22,7 +22,7 @@ console.log(results);
 ```
 
 ```js
-var results = AuthorModel.find({name: "Bob"}, function (err, docs){
+var author = AuthorModel.find({name: "Bob"}, function (err, docs){
   if(err)
 console.log("Action cannot be completed")});
 console.log(docs);
@@ -40,7 +40,18 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var instructor = Instructor.find({name: "Andy"}, function (err, docs){
+  if(err)
+console.log("Action cannot be completed")});
+console.log(docs);
+});
+var instructor = Instructor.create({gender: "Male"}, function (err, docs){
+  if(err)
+  console.log("Action cannot be completed")});
+  console.log(docs);
+});
+})
+
 ```
 
 ### Question #4
