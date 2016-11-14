@@ -102,8 +102,8 @@ app.delete("/candidates/:name", (req,res) => {
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
-
+```
+Rails is written in ruby and Express is written in js.
 ```
 
 ### Question #8
