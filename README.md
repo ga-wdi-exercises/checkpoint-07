@@ -21,7 +21,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
@@ -59,8 +60,8 @@ author.save(function(err){
 
 What is module.exports and why do we use it?
 
-```text
-
+```
+Module.exports allow to use pieces of codes in other files part from the file you havewritten your code originally!
 ```
 
 ### Question #6
