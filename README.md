@@ -6,8 +6,8 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
+```
+An SQL database is based table based. Meaning that it organizes data in rows and columns. A NoSQL database uses key value pairs to store its information. A NoSQl database can serve you better when it come to scalability for a large app. AN SQL database is best used for maintaining a more structured approach.
 
 ```
 
