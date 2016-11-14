@@ -72,7 +72,7 @@ link_to "authors"
 
 What is module.exports and why do we use it?
 
-```text
+```module.exports takes code from one page, encapsulates it into a small line of code. this code can then be exported to other into a fdifferent file and used by calling the module.exports 
 
 ```
 
