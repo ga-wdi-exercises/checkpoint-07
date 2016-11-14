@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL, short for sequel, describes a relational database.  It is useful for more complex, schematic data.  When more flexibility is required in the construction of each document, a noSQL db is more suited.
 ```
 
 ### Question #2
@@ -22,7 +21,8 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
