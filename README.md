@@ -66,7 +66,8 @@ author.save(function(err){
 ```
 
 ```rb
-
+@author = Author.create(name: params[:name])
+redirect_to authors_path
 ```
 ## Express
 
