@@ -53,10 +53,8 @@ author.save(function(err){
 ```
 
 ```rb
-@author = Author.new(name: params.name)
-@author.save!
-
-# Double check this
+@author = Author.new(name: params[:name])
+@author.save
 ```
 ## Express
 
@@ -98,7 +96,7 @@ app.delete('/', (req, res) => {
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+First is the language that each is written in. Also, Rails is opinionated and Express is the wild West.
 ```
 
 ### Question #8
@@ -112,7 +110,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+Body-parser allows us to grab the content of forms and use it with req.body.  The line containing json sets its return as a json object, and urlencoded({extended: true}) allows us to use the 'querystring' library on it, rather than 'qs' library. This allows for rich objects and arrays, for an end object more similar to json.
 ```
 
 ### If you finish early...
