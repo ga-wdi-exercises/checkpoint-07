@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQl databases are also known as Relational Databases and have many tables. No SQL databases are dcoument based, key value pairs. SQL dbs usually have a predefined schema where NoSQL has a dynamic schema for unstructured data. A NoSQL db is preferable when you have a ton of information that doesn't necessarily need relational mapping and can scale horizontally. A SQL db is vertically scalable and can provide clarity when searching for data.
 
 ```
 
@@ -22,7 +22,11 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+results is returning as a query object and not hte result. The result can be avaiable in a callback or using a mongoose promise aka .exec
+
+var results = AuthorModel.find({name:"Bob"}).exec()
+console.log(results)
+
 ```
 
 ### Question #3
@@ -35,7 +39,7 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({"name": "Andy"},{$push:{"description": "Resin Laying Deer Figurine, Gold"}})
 ```
 
 ### Question #4
@@ -52,7 +56,10 @@ author.save(function(err){
 ```
 
 ```rb
+@author = Author.new(name: params[:name])
+@author.save!
 
+or @author = Author.create!(name: params[:name])
 ```
 ## Express
 
@@ -61,6 +68,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
+module.exports allows us to use variables we've defined in one js file to another js file as long as we require that specific js file that has the exports. It allows for cleaner management of js code within your js application.
 
 ```
 
@@ -75,7 +83,27 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", (req, res) => {
+  res.render("hello pizza")
+})
 
+app.post("/pizza", (req, res) =>{
+  Pizza.create(req.body.pizza).then( pizza => {
+    res.redirect("/pizza/" + pizza.type)
+  })
+})
+
+app.post("/pizza/:type", (req, res) => {
+  Pizza.findOneAndUpdate({type: req.params.type}, req.body.pizza, {new: true}). then ( pizza =>{
+    res.redirect("/pizza/" + pizza.type)
+  })
+})
+
+app.post("/pizza/:type/delete", (req, res) => {
+  Pizza.findOneAndRemove({type: req.params.type}).then (pizza =>{
+    res.redirect("/pizza")
+  })
+})
 ```
 
 ### Question #7
@@ -83,7 +111,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails and Express are similar in the fact that they are both backend frameworks that connects the front end to the backend. The main difference I see between them is that Rails use Ruby and Express uses javascript. Express is also more configurable with Rails relying more on a convention. Express is also faster since everything is customizable and streamlined.
 ```
 
 ### Question #8
@@ -97,7 +125,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+Body parser allows for node.js to collect the information from a form in the front end. That is if you don't have angular recieving the information. The .json returns the information in a json format.
 ```
 
 ### If you finish early...
