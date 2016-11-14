@@ -6,8 +6,8 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
+```
+An SQL database is based table based. Meaning that it organizes data in rows and columns. A NoSQL database uses key value pairs to store its information. A NoSQl database can serve you better when it come to scalability for a large app. AN SQL database is best used for maintaining a more structured approach.
 
 ```
 
@@ -22,7 +22,12 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+var author = AuthorModel.find({name: "Bob"}, function (err, docs){
+  if(err)
+console.log("Action cannot be completed")});
+console.log(docs);
+});
+
 ```
 
 ### Question #3
@@ -35,7 +40,18 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var instructor = Instructor.find({name: "Andy"}, function (err, docs){
+  if(err)
+console.log("Action cannot be completed")});
+console.log(docs);
+});
+var instructor = Instructor.create({gender: "Male"}, function (err, docs){
+  if(err)
+  console.log("Action cannot be completed")});
+  console.log(docs);
+});
+})
+
 ```
 
 ### Question #4
