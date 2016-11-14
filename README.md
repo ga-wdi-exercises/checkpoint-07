@@ -44,7 +44,9 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+// Your answer..
+var andy = new Instructor ({name: Andy,
+description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question #4
