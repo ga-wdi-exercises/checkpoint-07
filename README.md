@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
+SQl databases are also known as Relational Databases and have many tables. No SQL databases are dcoument based, key value pairs. SQL dbs usually have a predefined schema where NoSQL has a dynamic schema for unstructured data. A NoSQL db is preferable when you have a ton of information that doesn't necessarily need relational mapping and can scale horizontally. A SQL db is vertically scalable and can provide clarity when searching for data.
 
 ```
 
