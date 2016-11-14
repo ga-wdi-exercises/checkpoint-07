@@ -111,7 +111,7 @@ app.post("/pizza/:type/delete", (req, res) => {
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails and Express are similar in the fact that they are both backend frameworks that connects the front end to the backend. The main difference I see between them is that Rails use Ruby and Express uses javascript. Express is also more configurable with Rails relying more on a convention. Express is also faster since everything is customizable and streamlined.
 ```
 
 ### Question #8
