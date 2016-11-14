@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-SQL databases are used when there are relationships involved, i.e. doctors and patients. It stands for Structured Query Language.  NoSQL is used when there is not a relationship between the data and you just want to store it.  For NoSQL you would use collections instead of tables. 
+SQL databases are used when there are relationships involved, i.e. doctors and patients. It stands for Structured Query Language.  NoSQL is used when there is not a relationship between the data and you just want to store it.  For NoSQL you would use collections instead of tables.
 
 ```
 
@@ -22,7 +22,7 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+The syntax "AuthorModel", that would not be the correct name.  If you are trying to find a document with the value "Bob" for the key "name" in an author collection.
 ```
 
 ### Question #3
@@ -35,8 +35,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
-```
+var andy = Instructor.find_by({name: "Andy"})
+var wishlist_items = Wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})
 
 ### Question #4
 
@@ -60,9 +60,7 @@ author.save(function(err){
 
 What is module.exports and why do we use it?
 
-```text
-
-```
+module.exports is used to export information from one file to another. For example, if you want create a model and schema and saved it to Schema.js, if you would like to use it in your seed.js file you would need to export the model and schema, which would be done use module.exports.
 
 ### Question #6
 
@@ -82,9 +80,7 @@ var app = express();
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
-
-```
+Express is written runs on node.js and is written in javascript.  Rails is written in Ruby and uses embedded ruby files not html.  Rails talks to ActiveRecord while Express talks to mongoose.  
 
 ### Question #8
 
@@ -96,9 +92,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 ```
 
-```text
-Your answer here
-```
+Body Parser is used when you want to submit a post request and form in express. It creates middleware.
+"var bodyParser = require("body-parser")" is requiring or adding body-parser to the file and "app.use(bodyParser.json())" is allowing json to be rendered. It returns middleware that only parses json. "app.use(bodyParser.urlencoded({extended: true}))" returns middleware that only parses urlencoded bodies.  
 
 ### If you finish early...
 
