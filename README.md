@@ -72,7 +72,7 @@ link_to "authors"
 
 What is module.exports and why do we use it?
 
-```module.exports takes code from one page, encapsulates it into a small line of code. this code can then be exported to other into a fdifferent file and used by calling the module.exports 
+```module.exports takes code from one page, encapsulates it into a small line of code. this code can then be exported to other into a fdifferent file and used by calling the module.exports
 
 ```
 
@@ -87,6 +87,26 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get('/', function (req, res){
+  res.send('')
+})
+app.post('/', function (req, res) {
+  res.send('')
+})
+app.put('/', function(res,req) {
+    res.send('');
+}, send);
+
+app.delete(function(req, res) {
+        object.remove({
+            _id: req.params.object_id
+        }, function(err, ) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+        });
+    });
 
 ```
 
