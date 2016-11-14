@@ -114,7 +114,7 @@ app.delete(function(req, res) {
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
+```Express allows you to write server-side applications in JS, while rails. Rails has to be built out in the files and implemented to what specific file its to be used in. the framework in Rails is opinionated in that if you work on someone elses prior work itll be easier to work with language wise.
 
 ```
 
@@ -129,7 +129,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+this is used to parse the text as Url encoded data. Its used for the POST so we can create and update through JSON
 ```
 
 ### If you finish early...
