@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+SQL is a table based database while NoSQL is more of a document! So its relational Db vs Non-relational databsea!
 ```
 
 ### Question #2
