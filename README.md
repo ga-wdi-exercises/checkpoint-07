@@ -60,7 +60,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+Module.exports takes all functions related to a specific line of code and places it into a file.
 ```
 
 ### Question #6
