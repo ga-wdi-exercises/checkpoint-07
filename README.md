@@ -22,7 +22,11 @@ console.log(results);
 ```
 
 ```js
-// Your answer...
+results is returning as a query object and not hte result. The result can be avaiable in a callback or using a mongoose promise aka .exec
+
+var results = AuthorModel.find({name:"Bob"}).exec()
+console.log(results)
+
 ```
 
 ### Question #3
