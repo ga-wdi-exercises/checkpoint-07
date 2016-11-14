@@ -81,7 +81,17 @@ var app = express();
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
+```Express: "Wild Wild West" - You don't have to follow a certain set of      rules to make it work.
+Express is faster than rails.
+Web Sockets
+NPM vs Gems
+Harder to test
+
+Rails: Ruby is a very powerful and expressive language
+Very opinionated framework you must follow the "rails way"
+Migrations
+Slower than Express
+Easier to test
 
 ```
 
