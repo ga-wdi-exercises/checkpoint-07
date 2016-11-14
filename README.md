@@ -6,9 +6,8 @@
 
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
-```text
-Your answer...
-
+``
+NoSQL DB means that there are no explicit one to one, one to many or many to many relationships.  While a SQL DB is broken down in to tables, NoSQL on the other hand is organized by collections.  Additionally, documents in NoSQL are the equivalent to rows in SQL.
 ```
 
 ### Question #2
@@ -61,7 +60,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+module.exports allows code to be transferred from one file to another by making the contents a global variable
 ```
 
 ### Question #6
@@ -75,6 +74,15 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/index", (req, res) => {
+  res.render("Welcome page");
+});
+
+app.post("/create", function(req, res) {
+  Thing.create(req.body.create).then(thing => {
+    res.redirect(`/create/${thing.name}`)
+  });
+});
 
 ```
 
@@ -83,7 +91,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails is a more opinionated framework where there are more rules and it is fairly structured.  Express on the other hand is much less structured and provides the capability to build an application in any sort of a number of ways.
 ```
 
 ### Question #8
@@ -98,6 +106,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 ```text
 Your answer here
+Express does not by default handle information from an HTML form.  For that to occur, it is necessary to utilize a form of "middleware" known as body-parser.  Therefore the previous lines are instructing the application to use body-parser to accept json data.
 ```
 
 ### If you finish early...
