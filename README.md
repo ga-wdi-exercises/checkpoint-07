@@ -103,8 +103,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 ```
 
-```text
-Your answer here
+```
+body parser is basically encoding whatever request you are making to your server, and passsing it as either json or other formt.
+the above lines of code are basically telling your node/express document to use body parser and encode to json and url!
 ```
 
 ### If you finish early...
