@@ -34,7 +34,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+Instructor.find_by({name: "Andy"})
+Instructor.create({description:"Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question #4
@@ -59,8 +60,8 @@ author.save(function(err){
 
 What is module.exports and why do we use it?
 
-```text
-
+```
+module.exports allows us to separate our js files by exposing their contents as one global variable. We assign it when we require the file. 
 ```
 
 ### Question #6
