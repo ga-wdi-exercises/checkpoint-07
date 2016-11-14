@@ -125,7 +125,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+Body parser allows for node.js to collect the information from a form in the front end. That is if you don't have angular recieving the information. The .json returns the information in a json format.
 ```
 
 ### If you finish early...
