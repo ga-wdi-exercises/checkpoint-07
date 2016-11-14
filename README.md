@@ -61,7 +61,8 @@ author.save(function(err){
   }
 })
 ```
-
+Author.create({:name => ' '})
+link_to "authors"
 ```rb
 
 ```
