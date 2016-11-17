@@ -20,8 +20,12 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 
+This is a Mongoose Query. It needs a callback.
+
 ```js
-No idea, I will research.
+var results = AuthorModel.find({name: "Bob"}, results) => {
+console.log(results);
+}
 ```
 
 ### Question #3
