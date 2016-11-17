@@ -7,8 +7,7 @@
 Describe the differences between a SQL and NoSQL DB, and when you might use each.
 
 ```text
-Your answer...
-
+NoSQL, like SQL, stores data but is a flexible alternative. You might use NoSQL if you have a less data pieces to work with. For example, information limited to just a book and author might be better suited for a NoSQL DB. But if one were to scale and create further models and associations, SQL would be better suited. It all depends on the data requirements.
 ```
 
 ### Question #2
@@ -21,8 +20,12 @@ var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
 
+This is a Mongoose Query. It needs a callback.
+
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, results) => {
+console.log(results);
+}
 ```
 
 ### Question #3
@@ -35,7 +38,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-// Your answer...
+var andy = InstructorModel.findById({name: "Andy"}, andy)
+andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"}, wishlist)
 ```
 
 ### Question #4
@@ -52,7 +56,17 @@ author.save(function(err){
 ```
 
 ```rb
+author = Author new
+author.name = "Hank"
+author.save
+```
 
+or
+
+```rb
+author = Author.new do |u|
+  u.name = "Hank"
+end
 ```
 ## Express
 
@@ -61,7 +75,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-
+It allows a block of code to be used in other files.
 ```
 
 ### Question #6
@@ -74,8 +88,30 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+// Read
+app.get('/authors', function (req, res) {
+})
 
+// Create
+app.author('/authors', function (req, res) {
+  Author.create(req.name.author).then(function(author){
+    res.redirect("/authors/" + author.name)
+  })
+})
+
+// Update
+app.author('/authors/:name', function (req, res) {
+  Author.findOneAndUpdate({name: req.params.name}, {new: true}).then({
+    res.redirect("/authors/" + author.name)
+  })
+})
+
+// Delete
+app.author('/authors/:name', function (req, res) {
+  Author.findOneAndRemove({name: req.params.name}).then({
+    res.redirect("/authors/")
+  })
+})
 ```
 
 ### Question #7
@@ -83,7 +119,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-
+Rails has more helpful error messaging. Express is apparently faster. Will research this more.
 ```
 
 ### Question #8
@@ -97,8 +133,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer here
+"In short; body-parser extracts the entire body portion of an incoming request stream and exposes it on `req.body` as something easier to interface with."
 ```
+via [Quora](https://www.quora.com/What-exactly-does-body-parser-do-with-express-js-and-why-do-I-need-it)
 
 ### If you finish early...
 
