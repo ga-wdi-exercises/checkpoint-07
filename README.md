@@ -88,8 +88,30 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-Need to review and research all things Express.
+// Read
+app.get('/authors', function (req, res) {
+})
 
+// Create
+app.author('/authors', function (req, res) {
+  Author.create(req.name.author).then(function(author){
+    res.redirect("/authors/" + author.name)
+  })
+})
+
+// Update
+app.author('/authors/:name', function (req, res) {
+  Author.findOneAndUpdate({name: req.params.name}, {new: true}).then({
+    res.redirect("/authors/" + author.name)
+  })
+})
+
+// Delete
+app.author('/authors/:name', function (req, res) {
+  Author.findOneAndRemove({name: req.params.name}).then({
+    res.redirect("/authors/")
+  })
+})
 ```
 
 ### Question #7
