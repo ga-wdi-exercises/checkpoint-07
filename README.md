@@ -38,7 +38,8 @@ Convert the following ActiveRecord sequence to Mongoose:
 ```
 
 ```js
-Some idea, but I will research.
+var andy = InstructorModel.findById({name: "Andy"}, andy)
+andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"}, wishlist)
 ```
 
 ### Question #4
@@ -55,7 +56,17 @@ author.save(function(err){
 ```
 
 ```rb
-No idea. I will research.
+author = Author new
+author.name = "Hank"
+author.save
+```
+
+or
+
+```rb
+author = Author.new do |u|
+  u.name = "Hank"
+end
 ```
 ## Express
 
