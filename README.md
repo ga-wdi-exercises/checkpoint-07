@@ -133,7 +133,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Parses the body as JSON.
+"In short; body-parser extracts the entire body portion of an incoming request stream and exposes it on `req.body` as something easier to interface with."
+via [Quora](https://www.quora.com/What-exactly-does-body-parser-do-with-express-js-and-why-do-I-need-it)
 ```
 
 ### If you finish early...
