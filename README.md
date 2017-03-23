@@ -78,10 +78,26 @@ Write one Express route for each of the four HTTP methods.
 Then, make each route respond with a one-word string containing the RESTful action that would most likely be associated with this route.
 
 ```js
+// Little confused on what this is asking, so I am just taking it literally and giving just the routes and returning a response to the console when the route is hit.  
+
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/authors", (req, res) => {
+  res.console.log("get");
+})
+
+app.post("/authors", (req, res) => {
+  res.console.log("post");
+})
+
+app.get("/authors/:name/delete", (req, res) => {
+  res.console.log("delete");
+})
+
+app.post("/authors/:name", (req, res) => {
+  res.console.log("update");
+})
 
 ```
 
