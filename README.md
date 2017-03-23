@@ -6,8 +6,9 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
+```
+  - SQL database is a relational database, it has tables, rows and columns. A SQL is better equipped to handle a lot of models/complex domain models.
+  - NoSQL database is a nonrelational database, and it has collections, documents and fields.  A NoSQL is more flexible and therefore better suited for less complex associated, no more than three models or it will get ugly.
 ```
 
 ### Question #2
@@ -22,7 +23,7 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+good question, I believe is because we set it to the results so there is no need to be redundant.
 ```
 
 ### Question #3
@@ -35,7 +36,23 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+
+show: function(req){
+  Instructor.findOne({"name": req.name}, function(err, docs){
+    console.log(docs);
+    return docs;
+  })
+}
+
+instructorsController.show({name: "Andy"});
+
+WishlistItems.create({description: "Resin Laying Deer Figurine, Gold"}, (err, wishlistitems) => {
+  if(err){
+    console.log(err);
+  } else {
+    console.log(wishlistitems);
+  }
+})
 ```
 
 ### Question #4
@@ -52,7 +69,11 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+def create
+  @author = Author.create!(author_params)
+
+  redirect to author_path(@author)
+end
 ```
 
 ## Express
@@ -62,7 +83,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+it is a JS convention that allows us to separate our JS files in a way that when we export it, we make their contents available to other files by requiring it in the appropriate file.
 ```
 
 ### Question #6
@@ -75,7 +96,9 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", function(req, res){
+  res.render("welcome");
+})
 
 ```
 
@@ -83,8 +106,8 @@ var app = express();
 
 Describe the differences between Express and Rails as backend frameworks.
 
-```text
-Your answer...
+```
+Express and Rails are both backend frameworks however, they are quite different. Express uses the language, Javascript, and the database MongoDB while Rails uses the language, Ruby and the database, PostgresQL (for example). Express has an ODM (Object Data Mapper) called Mongoose and Rails has an ORM ( Object Relational Mapper) which is Active Record. Rails has a defined controller, model and route files, Express doesn't. Express uses handlebars for views while Rails used erbs.  
 ```
 
 ### Question #8
@@ -97,8 +120,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 ```
 
-```text
-Your answer...
+```
+This is a block of code that allows Express to process "post" methods, without it forms will not be able to updated or created as post is used for both "put" and "create" methods.
 ```
 
 ### If You Finish Early...
