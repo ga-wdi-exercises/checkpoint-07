@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is relational: It has tables
 ```
 
 ### Question #2
@@ -37,7 +37,10 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+Instructor.findOneAndUpdate(
+  {name: "Andy"},
+  {$push: {wishlist_items: {description: "Resin Laying Deer Figurine, Gold"}}}
+)
 ```
 
 ### Question #4
@@ -54,7 +57,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(author_params)
+@author.save
 ```
 
 ## Express
@@ -64,7 +68,9 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+In node.js, we use module.exports when we want one file ('importer.js') to include data or logic from another file ('exporter.js'). In exporter.js, we add something of roughly this form: `module.exports = {key1: value1, key2: value2, key3: value3}`. Then, in importer.js, we add something like `const exporter = require('./exporter.js')` (this path assumes that they are in the same directory). Now those key-value pairs are available for use in importer.js. For example, `exporter.key1` will evaluate to `value1`.
+
+Why do we do this? To make our code more modular. In principle, we could put everything in one file, but this would make a nightmare out of finding things, debugging, dividing up labor, and reusing components on other projects, among other things.
 ```
 
 ### Question #6
@@ -86,7 +92,13 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is all about "Convention over Configuration." That is, it encourages all developers to do things pretty much the same way, rather than allowing each developer to reinvent the wheel. In other words, it is "opinionated."
+
+Express, on the other hand, is very "un-opinionated." That is, it has very few conventions, allowing a developer to configure things to her/his heart's content.
+
+Related to this is the fact that Rails puts a lot of functionality under the hood, whereas Express does not.
+
+Finally, Rails is fairly "batteries-included," meaning that it comes with a lot of stuff you will probably never use. Express, on the other hand, is extremely minimalist: You install packages on an as-needed basis.
 ```
 
 ### Question #8
@@ -100,7 +112,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+They tell Express how to extract data from forms.
 ```
 
 ### If You Finish Early...
