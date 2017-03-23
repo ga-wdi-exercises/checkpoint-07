@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database structure. Meaning that it stores data in a table with columns and rows showing relationships.
+NoSQL is a non-relational database that store data in JSON documents and it contains key/value pairs.
+These methods of storing data are alternatives to one another and their use is dependent on the type of data the user wants stored. SQL is good for structured data if the data that's inputed has the consistent properties. NoSQL is better used for more complex or nested data.
 ```
 
 ### Question #2
@@ -22,7 +24,11 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+You would need a call back function in order for the results to return something.
+
+var results = AuthorModel.find({name: "Bob"}, (err, authors) => {
+  console.log(results)
+})
 ```
 
 ### Question #3
@@ -35,7 +41,19 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({name: "Andy"}, (err, instructor) => {
+  console.log(andy)
+})
+
+var deer = new Wishlist_item(description: "Resin Laying Deer Figurine, Gold")
+
+deer.save((err, wishlist_item) => {
+  if(err){
+    console.log(err)
+  }else{
+    console.log(wishlist_item)
+  }
+})
 ```
 
 ### Question #4
@@ -52,7 +70,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+author = Author.create(name: => "author's name")
 ```
 
 ## Express
@@ -62,7 +80,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+It is the object that's returned as a result of a require call. We use this to internally scope functions. Essentially, we define our functions in a separate js file and use module.export to call those functions in another file.
 ```
 
 ### Question #6
@@ -74,8 +92,22 @@ Then, make each route respond with a one-word string containing the RESTful acti
 ```js
 var express = require("express");
 var app = express();
-
-// Your code starts here...
+//GET
+app.get('/', function(req, res) {
+  res.send('Get')
+})
+//POST
+app.post('/', function(req, res) {
+  res.send('Post')
+})
+//PUT
+app.put('/example', function(req, res) {
+  res.send('Put')
+})
+//DELETE
+app.delete('/example', function(req, res) {
+  res.send('Delete')
+})
 
 ```
 
