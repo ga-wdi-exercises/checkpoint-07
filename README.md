@@ -7,7 +7,14 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+NoSQL: non-relational database
+  -uses documents and collections instead of rows and tables
+  -makes it easier to handle and send data between client and database
+  -faster, more flexible
+  -automatic scaling
+SQL: relational database
+  -make queries to get data thats connected through a relation
+  -explicit relationships
 ```
 
 ### Question #2
@@ -22,7 +29,7 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+if youre finding just one instance then you need to use .findOne; you would console.log(author) instead of results
 ```
 
 ### Question #3
@@ -35,7 +42,21 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}, (err, instructor)=>{
+  console.log(instructor)
+})
+
+Instructor.create({name: "Andy", description: "Resin Laying Deer Figurine, Gold"}, (err, instructor)=>{
+  instructor.save((err, instructor)=>{
+    if(err){
+      console.log(err)
+    }
+    else {
+      console.log(instructor)
+    }
+  })
+})
+
 ```
 
 ### Question #4
@@ -52,7 +73,18 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+
+class Author < ActiveRecord
+def change
+  create_table :authors do |t|
+  t.string :name
+end
+end
+end
+
+Author.destroy_all
+
+Author.create!(name: "")
 ```
 
 ## Express
@@ -62,7 +94,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+it is a reference to the current module/object and exporting it to another file when you do "require"
 ```
 
 ### Question #6
@@ -75,7 +107,29 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get('/', (req, res) =>{
+  res.send("hello world")
+})
+
+app.post('/', (req, res)=>{
+  Model.create(req.body.model).then((model)=>{  
+  res.send("post created")
+})
+})
+
+app.post("/:name", (req, res)=>{
+  Model.findOneAndUpdate({name: req.params.name}, req.body.model, {new:true}).then((model)=>{
+    res.send("updated")
+  })
+
+})
+
+app.post("/:name/delete", (req, res)=>{
+  Model.findOneAndRemove({name: req.params.name}).then(()=>{
+    res.send("deleted")
+  })
+
+}
 
 ```
 
@@ -84,7 +138,8 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+-Express:NodeJS::Sinatra:Ruby
+-Express is not as strict as Rails and much lighter weight, and faster
 ```
 
 ### Question #8
@@ -98,7 +153,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+body parse is used in order to read POST data HTTP requests in express; it is middleware that reads a input from a form and stores it as an object which is access by req.body
 ```
 
 ### If You Finish Early...
