@@ -39,7 +39,10 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}).then((andy) => {
+  var item = new wishlistItem({description: "Resin Laying Deer Figurine, Gold"})
+  andy.wishlistItems.push(item)
+})
 ```
 
 ### Question #4
@@ -56,7 +59,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(name: params[:name])
+@author.save
+redirect_to authors_path
 ```
 
 ## Express
@@ -66,7 +71,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to essentially export an object from one file to other files, making the variables global. This is very useful because we can separate our js files and keep our code more organized.
 ```
 
 ### Question #6
@@ -79,7 +84,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", (req,res) => {
+  console.log("Show")
+})
+
+app.post("/", (req,res) => {
+  console.log("Create")
+})
+
+app.put("/", (req,res) => {
+  console.log("Update")
+})
+
+app.delete("/", (req,res) => {
+  console.log("Destroy")
+})
 
 ```
 
@@ -102,7 +121,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+body-parser is middleware that extracts the body of an incoming request and exposes it as req.body to make it easy to interact with in express.
 ```
 
 ### If You Finish Early...
