@@ -15,14 +15,17 @@ SQL databases are relational and table based whereas NoSQL dbs are non-relationa
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"});
+var results = AuthorModel.findO({name: "Bob"});
 console.log(results);
 ```
 
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"}).then((res) => {
+  console.log(res);
+});
+
 ```
 
 ### Question #3
