@@ -121,7 +121,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-
+you are telling express to use body-parser and to look at all incoming data as a json object
 ```
 
 ### If You Finish Early...
