@@ -71,7 +71,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-it lets us export an object that contains data we wish to pass on the rest of the NODE application. It allows us to have more modular code with multiple, seperated files, while allowing items to be accessed amongst each other.
+it lets us export an object that contains data we wish to pass on the rest of the NODE application. It allows us to have more modular code with multiple, separated files, while allowing items to be accessed amongst each other.
 ```
 
 ### Question #6
@@ -84,8 +84,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", function(req, res){
+  console.log("GET");
+})
 
+app.post("/something", function(req, res){
+  console.log("POST");
+})
+
+app.post("/something/:id", function(req, res){
+  console.log("PUT");
+})
+
+app.delete("/something/:id", function(req,res){
+  console.log("DELETE");
+})
 ```
 
 ### Question #7
