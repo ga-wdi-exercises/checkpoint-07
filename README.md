@@ -7,7 +7,11 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is relational. Each table represents an entity-class in the domain, each row represents an instance of that class, and each column represents an attribute of those entities. More importantly for this question, the tables, by way of foreign keys, can bear one-to-one, one-to-many, and many-to-many relations to one another.
+
+A NoSQL database is not inherently relational, although it can mimic this behavior. In the case of MongoDB, it is just a bunch of BJSON.
+
+When your domain is fairly intricate, you probably want a SQL database. However, NoSQL databases can be more performant under certain circumstances. They also allow for more flexibility (documents which are very similar need not have exactly the same columns, for example). They are also known for their scalability: multiple copies of the same database can be distributed as needed, staying in sync with one another. This is helpful when you have a ton of users, or when you want to cut down on latency.
 ```
 
 ### Question #2
@@ -22,7 +26,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+AuthorModel.find({name: "Bob"}).then(results => {
+  console.log(results)
+})
 ```
 
 ### Question #3
@@ -35,7 +41,10 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+Instructor.findOneAndUpdate(
+  {name: "Andy"},
+  {$push: {wishlist_items: {description: "Resin Laying Deer Figurine, Gold"}}}
+)
 ```
 
 ### Question #4
@@ -52,7 +61,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create!(author_params)
 ```
 
 ## Express
@@ -62,7 +71,9 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+In node.js, we use module.exports when we want one file ('importer.js') to include data or logic from another file ('exporter.js'). In exporter.js, we add something of roughly this form: `module.exports = {key1: value1, key2: value2, key3: value3}`. Then, in importer.js, we add something like `const exporter = require('./exporter.js')` (this path assumes that they are in the same directory). Now those key-value pairs are available for use in importer.js. For example, `exporter.key1` will evaluate to `value1`.
+
+Why do we do this? To make our code more modular. In principle, we could put everything in one file, but this would make a nightmare out of finding things, debugging, dividing up labor, and reusing components on other projects, among other things.
 ```
 
 ### Question #6
@@ -76,7 +87,21 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get('/posts', (req, res) => {
+  console.log('index or show')
+})
 
+app.post('/posts', (req, res) => {
+  console.log('create')
+})
+
+app.put('/posts/:title', (req, res) => {
+  console.log('update')
+})
+
+app.delete('/posts/:title', (req, res) => {
+  console.log('destroy')
+})
 ```
 
 ### Question #7
@@ -84,7 +109,13 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is all about "Convention over Configuration." That is, it encourages all developers to do things pretty much the same way, rather than allowing each developer to reinvent the wheel. In other words, it is "opinionated."
+
+Express, on the other hand, is very "un-opinionated." That is, it has very few conventions, allowing a developer to configure things to her/his heart's content.
+
+Related to this is the fact that Rails puts a lot of functionality under the hood, whereas Express does not.
+
+Finally, Rails is fairly "batteries-included," meaning that it comes with a lot of stuff you will probably never use. Express, on the other hand, is extremely minimalist: You install packages on an as-needed basis.
 ```
 
 ### Question #8
@@ -98,7 +129,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+They tell Express how to extract data from forms.
 ```
 
 ### If You Finish Early...
