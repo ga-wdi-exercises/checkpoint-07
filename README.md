@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-SQL databases are Relational Databases while NoSQL are non-relational or distributed database. SQL databases are tables and NoSQL are document based. You would use SQL for Rails applications and NoSQL when working with the MEAN or MERN stack
+SQL databases are Relational Databases while NoSQL are non-relational or distributed database. SQL databases are tables and NoSQL are document based. You would use SQL for Rails applications and NoSQL when working with the MEAN or MERN stack.
 ```
 
 ### Question #2
@@ -22,7 +22,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, function(results){
+  console.log(results);
+});
 ```
 
 ### Question #3
