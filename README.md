@@ -74,7 +74,7 @@ end
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to create global variables that can be used across our multiple JS files
 ```
 
 ### Question #6
@@ -87,7 +87,31 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/api/items", function(req, res){
+  res.rend("index")
+  console.log("Get allows you to Read a the items from the API");
+})
+
+app.post("/api/items", function(req, res){
+  Item.create(req.body).then(function(item){
+    res.json(item)
+  })
+  console.log("Post allows you to Create new items in the API");
+})
+
+app.delete("/api/items/:name", function(req, res){
+  Item.findOneAndRemove({ name: req.params.name }).then(function(){
+    res.json({ success: true })
+  })
+  console.log("Delete allows you to Delete items from the API");
+})
+
+app.put("/api/items/:name", function(req, res){
+  Item.findOneAndUpdate({ name: req.params.name }, req.body, { new: true }).then(function(item){
+    res.json(item)
+  })
+  console.log("Put allows you to Update existing items in the API");
+})
 
 ```
 
