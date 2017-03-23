@@ -38,7 +38,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.findOne({name: "Andy"}).then((res) =>{
+  andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
+})
 ```
 
 ### Question #4
