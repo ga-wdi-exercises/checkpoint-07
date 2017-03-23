@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL (Structured Query Language) is a programming language that is used to manage data in relational database’s. Where as, NoSQL is a database that provides a mechanism for storage and retrieval of data which is modeled in means other than the tabular relations used in relational databases.
+
+I'd use SQL to managed anything that I'm looking to build with C.R.U.D. functionality. I might use NoSQL for an app that I have users using a ton of C.R.U.D. functionality that won't impact any of the other data in the database.
 ```
 
 ### Question #2
@@ -15,7 +17,7 @@ Your answer...
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"});
+var results = author.model.find({'User', Bob'});
 console.log(results);
 ```
 
