@@ -97,7 +97,7 @@ app.post("/something/:id", function(req, res){
 })
 
 app.delete("/something/:id", function(req,res){
-  console.log("DELETE");
+  console.log("DELETEd");
 })
 ```
 
@@ -106,7 +106,8 @@ app.delete("/something/:id", function(req,res){
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is a NODE framework and Rails is for Ruby
+Express if very flexible and gets it from the modules imported in. It is a very lightweight and not opinionated. Rails is the oppisite Rails is highly opinionated and has very specific way to  write things.
 ```
 
 ### Question #8
@@ -120,7 +121,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+
 ```
 
 ### If You Finish Early...
