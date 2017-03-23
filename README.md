@@ -120,7 +120,12 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+line 1: importing body parser as a dependency, body parser is a middleware that extracts the body of the incoming request so it's easier to interface with
+
+line 2: telling body parser to parse the incoming text as json
+
+line 3: tells body parser to take the information from an html form and encode as key:value pairs
+
 ```
 
 ### If You Finish Early...
