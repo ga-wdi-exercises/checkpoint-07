@@ -7,7 +7,10 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+  The difference between the two is that SQL(ORM) is a relational database while NoSQL(ODM) is a non-relational database. Which means that there is no explicit one to one, one to many, or many to many database.
+
+  You may use want to use NoSQL over SQL because it's flexible(you don't have to use a schema), fast(data is denormalized), and if we use javascript on both ends, it's easier.
+
 ```
 
 ### Question #2
@@ -35,7 +38,14 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+
+Instructor.findOne({name: "Andy"}, (err,obj) =>{
+  console.log(obj)
+})
+
+var wishlist_item1 = new Wishlist_Items({description: "Resin Laying Deer Figurine, Gold"})
+// add wish list to instructor collection
+andy.wishlist_items.push(wishlist_item1)
 ```
 
 ### Question #4
@@ -52,7 +62,12 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+def create
+  @author = Author.find(params[:author_id])
+  @author = @author.create!(author_params)
+
+  redirect_to author_path(@author)
+end
 ```
 
 ## Express
@@ -62,7 +77,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+We use it to connect our current page with our other files and to separate our concerns.
 ```
 
 ### Question #6
@@ -75,7 +90,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get('/', function (req, res){
+  res.send('Hello World!')
+})
+
+app.post('/', function (req, res){
+  res.send('Got a POST request')
+})
+
+app.put('/user', function (req, res) {
+  res.send('Got a PUT request at /user')
+})
+
+app.delete('/user', function (req, res) {
+  res.send('Got a DELETE request at /user')
+})
 
 ```
 
@@ -84,7 +113,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express uses javascript while Rails uses ruby.
 ```
 
 ### Question #8
@@ -98,7 +127,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+It allows you to use body-parser. Which is middleware. It is a code that runs in between receiving the request and responding. It helps us get and send info for forms.
 ```
 
 ### If You Finish Early...
