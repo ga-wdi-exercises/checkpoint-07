@@ -53,7 +53,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+# Author.create(:name => 'Bob')
 ```
 
 ## Express
@@ -63,7 +63,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+<!-- the utility of having module.exports is that you can encapsulate code in a file that can then be utilized in other files-->
 ```
 
 ### Question #6
@@ -79,7 +79,16 @@ var app = express();
 // app.get('/', function(req, res) {
 //   res.send('Hello World');
 // });
-// app.
+// app.patch('/:name', (req, res){
+// res.render("show")
+// });
+// app.post("/new", (req, res)
+// res.redirect('/')
+// });
+// app.delete('/:name', (req, res){
+// res.redirect('/')
+// });
+
 ```
 
 ### Question #7
