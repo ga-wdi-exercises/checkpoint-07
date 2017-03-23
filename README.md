@@ -7,7 +7,8 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL database: a relational database - great to use when dealing with complex domain models (relational tables). Downside: slows down our app.
+noSQL database: non-relational database (document based) - great to use when working with a flexible data model, that involves similar but different objects.
 ```
 
 ### Question #2
@@ -22,7 +23,15 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+function findByName(author) {
+  Author.findOne({name: author}, function(err, author) {
+    if(err) {
+      console.log(err)
+    } else {
+      console.log(author)
+    }
+  })
+}
 ```
 
 ### Question #3
@@ -52,7 +61,20 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+def new
+  @author = Author.new
+end
+
+def create
+  @author = Author.create!(author_params)
+  redirect_to authors_path
+end
+
+private
+def author_params
+  params.require(:author).permit(:name,)
+end
+end
 ```
 
 ## Express
@@ -62,7 +84,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports is used when we'd like to make something within our file publicly accessible to anything (required) outside the file.
 ```
 
 ### Question #6
@@ -73,9 +95,56 @@ Then, make each route respond with a one-word string containing the RESTful acti
 
 ```js
 var express = require("express");
+var parser   = require("body-parser");
 var app = express();
 
-// Your code starts here...
+
+var Movie = mongoose.model("Movie")
+
+ // show all movies
+app.get("/movies", function(req,res) {
+  Movie.find({}).then( (err, movies) => {
+    if(err) {
+      return res.send(err)
+    } else {
+      res.send("Movies!")
+    }
+    movies: movies
+  })
+})
+
+// show each movie
+app.get("/movies/:name", function(req,res) {
+  Movie.findOne.({name: req.params.name}).then( (movie) => {
+    if(err) {
+      return res.send(err)
+    } else {
+      res.send("Movie")
+    }
+    movie: movie
+  })
+})
+
+ // add a movie (assuming there is a form to create a movie)
+ app.post("/movies", function(req,res) {
+   Movie.create(req.body.movie).then( (movie) => {
+     res.send("Created")
+   })
+ })
+
+  // delete a movie
+  app.post("/movies/:name/delete", function(req, res) {
+    Movie.findOneAndRemove({name: req.params.name}).then( () => {
+      res.send("Deleted")
+    })
+  } )
+
+  // update a movie
+  app.post("/movies/:name", function(req, res) {
+    Movie.findOneAndUpdate({name: req.params.name}).then( () => {
+      res.send("Updated")
+    })
+  })
 
 ```
 
@@ -84,7 +153,8 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is a backend framework that supports Node.js / JavaScript front-end language, and uses Mongoose as database with Mongo.
+Rails is a backend framework that supports Ruby front end language, and uses SQL database with ActiveRecord.
 ```
 
 ### Question #8
@@ -98,7 +168,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Renders seed data.
 ```
 
 ### If You Finish Early...
