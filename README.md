@@ -68,7 +68,7 @@ redirect_to "/authors"
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports is used to export methods or variables scoped within one file and then import (using require) into a separate file to be used within that file
 ```
 
 ### Question #6
