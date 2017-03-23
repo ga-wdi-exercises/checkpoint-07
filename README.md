@@ -6,9 +6,15 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
-```
+SQL databases are primarily called as Relational Databases whereas NoSQL database are primarily called as non-relational or distributed database.
+
+SQL databases scale vertically, while NoSQL databases scale horizontally.
+
+SQL databases emphasizes on ACID properties  whereas the NoSQL database follows the Brewers CAP theorem
+
+NoSQL handles hierarchical data better than SQL. Hence, NoSQL is preferable to SQL when managing big data.
+
+
 
 ### Question #2
 
@@ -22,8 +28,11 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
-```
+// needs a callback function
+var results = AuthorModel.find({name: "Bob"}, function(results){
+   console.log(results);
+ });
+
 
 ### Question #3
 
@@ -54,6 +63,7 @@ author.save(function(err){
 ```rb
 # Your answer...
 ```
+author = Author.create(name: => "author's name")
 
 ## Express
 
@@ -64,6 +74,7 @@ What is module.exports and why do we use it?
 ```text
 Your answer...
 ```
+it is an object thats returned as a result of a require call. we use this to scope functions
 
 ### Question #6
 
