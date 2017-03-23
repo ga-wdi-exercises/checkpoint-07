@@ -7,7 +7,12 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+contrast:
+SQL:    structured, relational, tables, explicit foreign keys
+NoSQL:  unstructured
+compare:
+  sql/db/table/record == nosql/db/collection/document
+i will start thinking about nosql for storing logs & histories from apps like httpservers, nodemon, mongod, sinatra  
 ```
 
 ### Question #2
@@ -15,15 +20,18 @@ Your answer...
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
+    no callback function
+    // orig:
 var results = AuthorModel.find({name: "Bob"});
 console.log(results);
 ```
-
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
-```
+// new:
+var results = AuthorModel.findOne({"name": req.name}, function(err, docs){
+    console.log(results);
+    return results;```
 
 ### Question #3
 
@@ -62,7 +70,15 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+takes
+code/methods/behaviours/functions and makes them available to other
+code; similar to
+inheritability in OO code, where another
+class or interface can
+extend or
+implement
+ref:  http://stackoverflow.com/questions/16213495/how-to-implement-inheritance-in-node-js-modules
+      http://stackoverflow.com/questions/26309012/how-to-subclass-a-node-js-module
 ```
 
 ### Question #6
@@ -84,7 +100,18 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is an entire framework, provides persistence/model;
+Express is more like an intermediary, that doesnt 'model'
+Most of the stuff i found compared Rails to Node.  Equestrian compared
+Node as javascripts equiv to Javas JVM, i.e.
+js:node :: java:JVM
+other stuffs:
+Rails:
+ has built-in support for CSS and JavaScript pre-processing
+ very opinionated, convention over config
+Express:
+ less opinionated, lots more files and connections necessary bw them that i had a hard time understanding and need to draw me some pictures when time permits
+
 ```
 
 ### Question #8
@@ -98,7 +125,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+parse user input
+.json:  reads a forms input and stores it as a javascript object accessible through req.body
+.urlencoded:  Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST) and exposes the resulting object (containing the keys and values) on req.body.
 ```
 
 ### If You Finish Early...
