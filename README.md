@@ -7,7 +7,13 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL Database is an object-relational-database while a NoSQL Database is non-relational. There are no explicit relationships between in a NoSQL db, but they CAN be replicated.
+
+A SQL Database would be useful if you have lots of uniform data that consistently follows the same Schema(s).
+
+A NoSQL Database would be useful for non-uniform data or if you want sub-information (such as comments) to be grouped with their parent object without needing to make extra queries and retrievals.
+
+
 ```
 
 ### Question #2
@@ -22,7 +28,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.findOne({ name: "Bob" });
+console.log(results);
+
 ```
 
 ### Question #3
@@ -35,7 +43,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+andy = Instructor.findOne({ name: "Andy" })
+andy.wishlist_items.push({ description: "Resin Laying Deer Figurine, Gold" })
 ```
 
 ### Question #4
@@ -52,7 +61,10 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create(author_params)
+unless author_params
+  redirect_to authors_path
+end
 ```
 
 ## Express
