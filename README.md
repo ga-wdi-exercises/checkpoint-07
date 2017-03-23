@@ -7,7 +7,11 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-A SQL database is relational: It has tables
+A SQL database is relational. Each table represents an entity-class in the domain, each row represents and instance of that class, and each column represents an attribute of those entities. More importantly for this question, the tables, by way of foreign keys, can bear one-to-one, one-to-many, and many-to-many relations to one another.
+
+A NoSQL database is not inherently relational, although it can mimic this behavior. In the case of MongoDB, it is just a bunch of BJSON.
+
+When your domain is fairly intricate, you probably want a SQL database. However, NoSQL databases can be more performant under certain circumstances. They also allow for more flexibility (documents which are very similar need not have _exactly_ the same columns, for example). They are also known for their scalability: multiple copies of the same database can be distributed as needed, staying in sync with one another. This is helpful when you have a ton of users, or when you want to cut down on latency.
 ```
 
 ### Question #2
@@ -57,8 +61,7 @@ author.save(function(err){
 ```
 
 ```rb
-@author = Author.new(author_params)
-@author.save
+@author = Author.create!(author_params)
 ```
 
 ## Express
@@ -84,7 +87,21 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get('/posts', (req, res) => {
+  console.log('index or show')
+})
 
+app.post('/posts', (req, res) => {
+  console.log('create')
+})
+
+app.put('/posts/:title', (req, res) => {
+  console.log('update')
+})
+
+app.delete('/posts/:title', (req, res) => {
+  console.log('destroy')
+})
 ```
 
 ### Question #7
