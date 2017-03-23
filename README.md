@@ -6,8 +6,8 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
+```
+SQL is for relational databases and NoSQL is not. You would use a SQL database for a model that belongs to another model.
 ```
 
 ### Question #2
@@ -22,7 +22,8 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"});
+console.log('last_name');
 ```
 
 ### Question #3
@@ -35,7 +36,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var Andy = Instructor.findOne({name: "Andy"})
+Andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question #4
@@ -52,7 +54,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = @authors.new
+@author.create!(author_params)
 ```
 
 ## Express
@@ -62,7 +65,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to separate js files and use the same variables from one file to another.
 ```
 
 ### Question #6
@@ -75,7 +78,22 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  res.send("GET");
+});
+
+app.post("/", (req, res) => {
+  res.send("POST")
+})
+
+app.delete("/", (req, res) => {
+  res.send("DELETE")
+})
+
+app.put("/", (req, res) => {
+  res.send("PUT")
+})
+
 
 ```
 
@@ -84,7 +102,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is a Javascript framework that uses noSQL and Rails is a Ruby framework that uses SQL.
 ```
 
 ### Question #8
@@ -98,7 +116,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+var bodyParser = require("body-parser")-so we can reference body-parser
+app.use(bodyParser.json())-converts bodyParser to json
+app.use(bodyParser.urlencoded({extended: true}))-supports HTML forms
 ```
 
 ### If You Finish Early...
