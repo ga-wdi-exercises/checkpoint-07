@@ -22,8 +22,8 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-var results = AuthorModel.find({name: "Bob"}, function(results){
-  console.log(results);
+var results = AuthorModel.find({name: "Bob"}, function(author){
+  console.log(author);
 });
 ```
 
