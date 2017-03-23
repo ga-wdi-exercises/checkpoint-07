@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational and are very structured through the use of tables and schema, whereas NoSQL databases are non-relational and data is stored in a single file.  SQL databases are useful when you already have a defined organizational structure for your data, while NoSQL databases can be used for data without a pre-determined structure.
 ```
 
 ### Question #2
@@ -23,6 +23,14 @@ console.log(results);
 
 ```js
 // Your answer...
+var results = AuthorModel.findOne({name: "Bob"}, (err, author) => {
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log(author);
+  }
+});
 ```
 
 ### Question #3
@@ -36,6 +44,17 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 
 ```js
 // Your answer...
+const andy = Instructor.findBy({name: "Andy"}, (err, instructor) => {
+  instructor.wishListItems.push(new wishListItem({description: "Resin Laying Deer Figurine, Gold"}));
+  instructor.save((err, results) => {
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log(results);
+    }
+  });
+});
 ```
 
 ### Question #4
@@ -53,6 +72,12 @@ author.save(function(err){
 
 ```rb
 # Your answer...
+def create
+  @author = Author.new({params[:name]})
+  if @author.save
+    redirect_to 'authors'
+  end
+end
 ```
 
 ## Express
@@ -62,7 +87,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports encapsulates a piece of code and allows it to be used in other parts of an application.  It can be used to implement data on any page, such as in the Emergency Compliment homework, where saving a 'colors' module.export provided the ability to save the module as a variable in index.js and randomly select a color saved in the array.
 ```
 
 ### Question #6
@@ -76,6 +101,23 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", (req, res) => {
+  res.send("Get");
+})
+
+app.post("/model", (req, res) => {
+  Model.create(req.body.model).then(function(model){
+    res.redirect("/model" + model.name);
+  })
+  res.send("Create");
+})
+
+app.post("/model/:name", (req, res) => {
+  Model.findOneAndUpdate({name: req.params.name}, req.body.model, {new: true}).then(function(model){
+    res.redirect("/model" + model.name)
+  })
+  res.send("Edit")
+})
 
 ```
 
@@ -98,7 +140,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Line 1: Configures an app to use body-parser since Express doesn't include it anymore.
+Line 2: This sets up body-parser to handle JSON POST requests.
+Line 3: This sets up body-parser to handle form submissions.
 ```
 
 ### If You Finish Early...
