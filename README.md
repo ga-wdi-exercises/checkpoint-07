@@ -37,7 +37,14 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}).then(err, docs){
+  if (err) {
+    console.log(err);
+  } else {
+    results.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
+    result.save
+  }
+})
 ```
 
 ### Question #4
@@ -64,7 +71,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+it lets us export an object that contains data we wish to pass on the rest of the NODE application. It allows us to have more modular code with multiple, seperated files, while allowing items to be accessed amongst each other.
 ```
 
 ### Question #6
