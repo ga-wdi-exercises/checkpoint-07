@@ -106,7 +106,7 @@ app.post("/authors/:name", (req, res) => {
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is more like Sinatra in that it is a more lightweight framework.  Express uses javascript vs Rails using Ruby.  Express is more open ended where rails is very opinionated and requires naming conventions.
 ```
 
 ### Question #8
