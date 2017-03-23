@@ -29,7 +29,7 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-if you're finding just one instance then you need to use .findOne; you would console.log(author) instead of results
+if youre finding just one instance then you need to use .findOne; you would console.log(author) instead of results
 ```
 
 ### Question #3
@@ -153,7 +153,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-body parse is used in order to read POST data HTTP requests in express; it is middleware that read's a input from a form and stores it as an object which is access by req.body
+body parse is used in order to read POST data HTTP requests in express; it is middleware that reads a input from a form and stores it as an object which is access by req.body
 ```
 
 ### If You Finish Early...
