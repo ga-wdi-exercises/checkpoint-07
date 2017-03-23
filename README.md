@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database with separate tables within the database. NoSQL is document based without the tables. Instead NoSQL uses documents which can still have one-to-many and many-to-many relationships either through embedding documents or using keys. SQL uses an ORM whereas NoSQL uses an ODM.
 ```
 
 ### Question #2
@@ -22,7 +22,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}) => {
+  console.log(results);
+};
 ```
 
 ### Question #3
@@ -35,7 +37,17 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+
+// Not sure which one is closest.
+
+
+Instructor.findOne({name: "andy"}, (wishlist_items) => {
+  wishlist.populate('wishlist_items')
+})
+
+Andy.wishlist.push(wishlist_items);
+
+
 ```
 
 ### Question #4
@@ -62,7 +74,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports is required to make modules or chunks of code from one application file available to other application files. This allows us to separate the application into files based on their function or responsibility and not having to duplicate code in other sections of the application.
 ```
 
 ### Question #6
@@ -75,7 +87,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  res.render("GET");
+})
+
+app.post("/", (req, res) => {
+  res.render("POST");
+})
+
+app.put("/author", (req, res) => {
+  res.render("PUT");
+})
+
+app.delete('/author', (req, res) => {
+  res.render("DESTROY")
+})
 
 ```
 
@@ -84,7 +110,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+As a backend framework Rails is very structured and rigid in that structure. It is opinionated and complains when you do things just slightly different from what it wants. Express on the other hadn is more open and provides the developer more freedom. Express is also Javascript which allows the developer to maintian a single language front-end and back-end.
 ```
 
 ### Question #8
@@ -98,7 +124,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+body parser allows NodeJS to intake form data from a front end app. The urlencoded tells bodyparser the format in which it will be receiving the for data.
 ```
 
 ### If You Finish Early...
