@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational and table based whereas NoSQL dbs are non-relational and document or kwy-value pair based.  SQL dbs should be used when there are clear relations between data.  NoSQL dbs are faster to query because everything is stored within a single document so they provide increased performance
 ```
 
 ### Question #2
