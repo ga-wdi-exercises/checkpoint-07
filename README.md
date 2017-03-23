@@ -136,7 +136,11 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+These lines tell the app to use Body-Parser and configure it to work with HTML.
+
+Body-Parser is some middleware that runs between the HTML forms and Express, allowing Express to post the form's HTML content as JSON.
+
+In simplest terms, it takes the HTML data from our contents BODY and turns it into JSON data that Express can then POST to the api. It's a fancy-schmancy-translator.
 ```
 
 ### If You Finish Early...
