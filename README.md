@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL (Structured Query Language) is a programming language that is used to manage data in relational database’s. Where as, NoSQL is a database that provides a mechanism for storage and retrieval of data which is modeled in means other than the tabular relations used in relational databases.
+
+I'd use SQL to managed anything that I'm looking to build with C.R.U.D. functionality. I might use NoSQL for an app that I have users using a ton of C.R.U.D. functionality that won't impact any of the other data in the database.
 ```
 
 ### Question #2
@@ -15,14 +17,14 @@ Your answer...
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"});
-console.log(results);
+var results = AuthoModel.findOne({ name: "Bob" });
+console.log(results)
 ```
 
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+
 ```
 
 ### Question #3
@@ -35,7 +37,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+andy = Instructor.findOne({ name: "Andy"})
+andy.wishlist_items.push({ description: "Resin Laying Deer Figurine, Gold" })
 ```
 
 ### Question #4
@@ -52,7 +55,10 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create(author_params)
+unless author_params
+  redirect_to authors_path
+end
 ```
 
 ## Express
@@ -62,7 +68,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports gives us the ability to create global variables that can be used across all of our JS files.
 ```
 
 ### Question #6
@@ -75,8 +81,32 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/api/items", function(req, res) {
+  res.rend("index")
+  console.log("Get allows you to read all of the items from the API")
+})
 
+app.post("/api/items", function(req, res) {
+  Item.create(req.body).then(function(item){
+    res.json(item)
+  })
+  console.log("Post allows you to create new items in the API")
+})
+
+app.delete("/api/items/:name", function(req, res) {
+  Item.create(req.body).then(function(item){
+    res.json(item)
+  })
+  console.log("Delete allows you to delete all of the items from the API")
+})
+
+app.put("/api/items/:name", function(req, res) {
+  Item.findOneAndUpdate({ name: req.params.name}, req.body, { new:true}).then(function(item){
+    res.json(item)
+  })
+  console.log("Put allows you to make sure all of your items are updated in the API")
+})
+  console.log("Put allows you to make sure all of your items are updated in the API")
 ```
 
 ### Question #7
@@ -84,7 +114,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express uses Javascript vs using Ruby. Where as, Rails follows the convention over configuration. We like to use express because its flexible and lighter.
 ```
 
 ### Question #8
@@ -98,7 +128,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+This is telling the app to use body-parser and configure it to work with the html in the document. Body-Parser is a middleware that runs between the HTML forms and Express which allows express to post the form's HTML content as json. This literally allows them to take html from the body and turn it into json data so express can post it to the api.
 ```
 
 ### If You Finish Early...
