@@ -57,7 +57,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create!(author_params)
+redirect_to "/authors"
 ```
 
 ## Express
