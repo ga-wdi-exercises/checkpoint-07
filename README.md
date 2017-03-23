@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is a relational database that follows a more rigid structure and requires schemas/ stores data in tables, while a NoSQL database is non-relational, is organized into documents and collections, and allows for greater flexibility. NoSQL databases scale out better than relational databases and are preferred for web applications, while SQL databases are preferred for enterprises because of better security models and mature data storage.
 ```
 
 ### Question #2
@@ -22,7 +22,11 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+The Mongoose queries are asynchronous, so we want to include a callback that will print the author model to the console, to ensure that the query has finished first.
+
+AuthorModel.find({name: "Bob"}, (results) => {
+  console.log(results);
+})
 ```
 
 ### Question #3
