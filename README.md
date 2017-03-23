@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-A SQL Database is a relational database, meaning that tables can have one-to-many or many-to-many relationships to each other. It consists of tables, and each table has columns and rows.
+A SQL Database is a relational database, meaning that tables can have one-to-one, one-to-many or many-to-many relationships to each other. It consists of tables, and each table has columns and rows.
 A NoSQL database is made of documents. Each document is made of fields and values. NoSQL databases don't need to have a schema, also it could have. Relations between documents doesn't exist, although it can be made.
 ```
 
@@ -23,7 +23,7 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-Because JS is an asynchronous language, console.log might run before the variable evaluates. We can fix it be adding the console.log as a call back or as a promise. Here is as a promise:
+Because JS is an asynchronous language, console.log might run before the variable evaluates. We can fix it be adding the console.log as a callback or as a promise. Here is as a promise:
 AuthorModel.find({name: "Bob"}).then( (author) => {
   console.log(author);
 })
@@ -107,7 +107,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ```text
 Rails is written in Rudy, while Express is written in JS and runs in the NodeJS environment through the v8 engine.
-Rails is very opinionated, while Express is minimalist non-opinionated.
+Rails is very opinionated, while Express is minimalist and non-opinionated.
 Express communicate better with front-end JS and APIs, because it has very similar syntax.
 ```
 
