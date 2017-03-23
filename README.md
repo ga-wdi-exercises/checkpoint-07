@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is a relational database, that is, the types of data that it stores have built in relations (one to one, one to many, many to many etc) whereas a NoSQL database does not have those relations built in (although, they can be built in to it). You might use a NOSQL database when you are worried that the format of the data might change, (i.e. new fields will be added to data, etc.) this is easy to accommodate in a NOSQL but not in a SQL database. In contrast, NOSQL doesn't scale well so large scale projects might be better undertaken with a SQL database.
 ```
 
 ### Question #2
@@ -22,7 +22,12 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+AuthorModel.findOne({name: "Bob"}, (results) => {
+  console.log(results);
+})
+
+
+// find will return an array, not a particular result, also no callback function here, possibility that console.log fires before the request to mongoose is complete.
 ```
 
 ### Question #3
@@ -35,7 +40,12 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+InstructorModel.findOne({name: "Andy"}).then((result) => {
+  let newOne = WishlistModel.create({description: "Resin Laying Deer Figurine, Gold"}).then((newOne) => {
+    result.wishlist_items.push(newOne)
+  })
+})
+// Im not super sure about nesting the promises here but that code looks otherwise right to me
 ```
 
 ### Question #4
@@ -52,7 +62,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+Author.create(:name => params[:name])
+ redirect_to "index"
 ```
 
 ## Express
@@ -62,7 +73,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports is the method we use to expose the contents of a js file to other js files in node.js. I believe we use this method of exposing files to other files in order to increase modularity and dryness of our code. (better than having all the contents of every file available to the contents of every other file)
 ```
 
 ### Question #6
@@ -75,7 +86,18 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get('/', (req, res) => {
+  res.send("Read")
+})
+app.post('/', (req, res) => {
+  res.send("Create")
+})
+app.put('/', (req, res) => {
+  res.send("Update")
+})
+app.delete('/', (req, res) => {
+  res.send("Destroy")
+})
 
 ```
 
@@ -84,7 +106,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express runs in the Node.js runtime environment meaning it operates *asynchronously*, in contrast, rails runs in ruby meaning it is synchronous (no need to muck about with callbacks or promises, you can just write your code programmatically), also, Express is Configuration over Convention, Rails is Convention over Configuration.
 ```
 
 ### Question #8
@@ -98,7 +120,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+The first line requires the body-parser dependency and stores it in a variable (which drives me crazy, should have used a const, not a var), the second line sets body-parser as your default program to deal with json (probably received from your backend api), the third line (as far as I know) is the line that sets body-parser to interpret data received from form inputs and query strings
 ```
 
 ### If You Finish Early...
