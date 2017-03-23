@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are Relational Databases while NoSQL are non-relational or distributed database. SQL databases are tables and NoSQL are document based. You would use SQL for Rails applications and NoSQL when working with the MEAN or MERN stack
 ```
 
 ### Question #2
