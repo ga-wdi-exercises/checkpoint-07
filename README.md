@@ -6,8 +6,8 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
+```
+SQL is a strict and rigid relational database system using tables to structure and store information - best for complex models; NoSQL is a flexible and scalable non-relational database system that structure and stores information in JSON documents - best for simple models with similar but different objects.
 ```
 
 ### Question #2
@@ -22,7 +22,11 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+
+var results = AuthorModel.find({name: "Bob"}, (err, results) => {
+  console.log(results);
+})
+
 ```
 
 ### Question #3
@@ -35,7 +39,19 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({name: "Andy"}, (err, instructor) => {
+  console.log(instructor);
+})
+
+var wishlistitems1 = new WishListItems({description: "Resin Laying Deer Figurine, Gold"})
+andy.wishlistitems.push(wishlistitems1)
+andy.save((err, instructor) => {
+  if(err){
+    console.log(err);
+  } else {
+    console.log(instructor + "was saved!");
+  }
+})
 ```
 
 ### Question #4
@@ -50,9 +66,15 @@ author.save(function(err){
   }
 })
 ```
-
 ```rb
-# Your answer...
+
+@author = Author.new(params[:name])
+if @user.save
+  redirect_to @user
+else
+  render 'error'
+end    
+
 ```
 
 ## Express
@@ -62,7 +84,9 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+
+Module.exports allows us to separate our js files by exposing their contents as one global variable. The global variable isn't assigned until we require the file.  It keeps our js code clean and modular.
+
 ```
 
 ### Question #6
@@ -84,7 +108,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is a very structured and opinionated framework; Express is much less opinionated, lighter weight and has a much more flexible structure.
 ```
 
 ### Question #8
@@ -98,7 +122,18 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+
+Body-parser is middleware which is code that runs in between receiving the request and responding.
+
+// configure app to use body parser
+var bodyParser = require("body-parser")
+
+//handles json post requests
+app.use(bodyParser.json())
+
+// handles form submissions
+app.use(bodyParser.urlencoded({extended: true}))
+
 ```
 
 ### If You Finish Early...
