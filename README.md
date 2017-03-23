@@ -120,7 +120,9 @@ app.put("/api/items/:name", function(req, res){
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Well first things first, Express uses JavaScript instead of Ruby.
+
+While Rails is VERY opinionated and follows Convention over Configuration, Express is much lighter weight and more flexible.
 ```
 
 ### Question #8
