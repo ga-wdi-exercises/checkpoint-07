@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database, meaning they store data in tables and rows to represent the relationships within and between models. In non-relational data bases, like NoSQL, data is represented in JSON form.
 ```
 
 ### Question #2
@@ -22,7 +22,16 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+// You would want to have the author model set outside the method and then set the above find method as a function and pass in bob as a parameter:
+
+var AuthorModel = Schema.AuthorModel
+
+function findByName(bob) {
+  AuthorModel.findOne({name: "Bob"})
+  console.log(results)
+}
+
+
 ```
 
 ### Question #3
@@ -35,7 +44,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+// Instructor.findone({name: "Andy"})
+//wishlist_items.create({description:"Resin Laying Deer Figurine, Gold""})
 ```
 
 ### Question #4
@@ -52,7 +62,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+author.create!(key: value)
 ```
 
 ## Express
@@ -62,7 +72,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+It allows yo to reference schema models in other files by requiring the schema.js file
 ```
 
 ### Question #6
@@ -75,7 +85,24 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get("/:name", (req, res) => {
+  res.send(`hello ${req.params.name}`)
+})
+
+app.post("/", (req, res) => {
+  res.send("can post")
+})
+
+app.post("/model/:name/delete", function (req, res)){
+  Model.findOneAndRemove(name: req.param.name).then(function(){
+    res.redirect("/model")
+  })
+}
+
+app.post("/model/:name", function (req, res)){
+  Model.findOneAndUpdate({name: req.param.name},req.body.model, {new:true})
+    res.redirect("/model" + model.name)  
+  )}
 
 ```
 
@@ -84,7 +111,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+The major thing is that Express in not as opinionated as Rails and its a lot lighter weight (you can add only as needed)
 ```
 
 ### Question #8
@@ -98,7 +125,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Configures/ requires body-parser to be used by the app (body parser takes the data in HTML form and makes it JSON so express can use it). line 2 handles JSON post requests, and line 3 handles form submissions
 ```
 
 ### If You Finish Early...
