@@ -22,7 +22,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+AuthorModel.find({name: "Bob"}).then(results => {
+  console.log(results)
+})
 ```
 
 ### Question #3
