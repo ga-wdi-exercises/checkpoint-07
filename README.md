@@ -116,7 +116,8 @@ app.delete('/example', function(req, res) {
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+With Express we have a lot of freedom in how we structure our application, its routes, resources, and assets (folders/files, how to load different files, managing dependencies, etc). Ultimately, Express is better for fast single page apps or ones that are more interactive.
+Rails goes through middleware to process and requires GEMS to process and respond to requests.
 ```
 
 ### Question #8
