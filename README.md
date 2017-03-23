@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL is a relational database whereas NoSQL is a non-relational database. The advantage of using a NoSQL database is that it is more easily scalable since you do not need a well defined data model structure in the beginning of your project.
 ```
 
 ### Question #2
@@ -35,7 +35,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.create({description: "Resin Laying Deer Figure, Gold"})
 ```
 
 ### Question #4
@@ -52,7 +53,13 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create(author_params)
+if @author.save
+  redirect_to authors_path
+else
+  flash[:alert] = "error message"
+  render new
+end
 ```
 
 ## Express
@@ -84,7 +91,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is an opinionated framework whereas Express is not. This means the Rails has a set way of doing things.
 ```
 
 ### Question #8
@@ -98,7 +105,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+The first line allows the application to use the bodyParser middleware in for data passing through your application.
+The second line parses texts in to json format
+The last line takes content from forms and parses it in to URL encoded data
+
 ```
 
 ### If You Finish Early...
