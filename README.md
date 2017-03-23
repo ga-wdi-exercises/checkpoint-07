@@ -8,6 +8,7 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 
 ```text
 Your answer...
+Some differences would be NoSQL has schema flexibility and is very fast. As well also use object orientated databases. NoSQL would be used for front end development, it works well with JS development. Where as SQL is used for a lot of back end development like rails.
 ```
 
 ### Question #2
@@ -22,7 +23,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+let results = AuthorModel.find({name: "Bob"}).then((author)=>{
+   console.log(author);
+ })
 ```
 
 ### Question #3
@@ -50,7 +53,7 @@ author.save(function(err){
   }
 })
 ```
-
+@travis = Author.new(name:"Travis")
 ```rb
 # Your answer...
 ```
@@ -62,7 +65,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module exports takes the encapsulated code in the module and allows this code to be utilized across other files.
 ```
 
 ### Question #6
@@ -85,8 +88,8 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ```text
 Your answer...
-```
-
+```express is a fast minimalist web framework
+for node.js. Ruby is optimized for easy usage thus making it easier to work with. So essentially one is faster while the other is easier to comprehend.
 ### Question #8
 
 What do the following lines of code do?
@@ -98,7 +101,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Your answer... I do believe this allows express to handle form data.
 ```
 
 ### If You Finish Early...
