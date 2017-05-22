@@ -71,7 +71,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+Module.exports is used to define the dependencies that the application will require to run.
 ```
 
 ### Question #6
