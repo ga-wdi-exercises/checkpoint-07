@@ -6,8 +6,8 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
+```
+SQL databases used relational tables and rows to store data. NoSQL databases are a collection of data and no relations except when specified.
 ```
 
 ### Question #2
