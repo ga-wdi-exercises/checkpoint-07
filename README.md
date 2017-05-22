@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases have data stored in tables with predefined schema while NoSQL has unstructured data stored in documents, with a dynamic schema.
 ```
 
 ### Question #2
@@ -35,7 +35,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+ var andy = Instructor.find({name: "Andy"})
+ andy.wishlist_items.push({description: "Resin laying Deer Figurine, Gold"})
+
 ```
 
 ### Question #4
@@ -52,7 +54,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author= Author.new(author_params)
+
+
 ```
 
 ## Express
@@ -62,7 +66,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports makes it possible for us to save a snippet of code and be able to call that in other application files to use said code.  It is used to keep our code dry and less repetitive.
 ```
 
 ### Question #6
@@ -76,7 +80,18 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
-
+app.get("/authors"), function(req, res){
+  res.render("GET")
+}
+app.post("/authors"), function(req, res){
+  res.render("POST")
+}
+app.put("/authors/:id"), function(req, res){
+  res.render("PUT")
+}
+app.delete("/authors/:id"), function(req, res){
+  res.render("DELETE")
+}
 ```
 
 ### Question #7
@@ -84,7 +99,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is a much more conventional framework. For example in rails it looks for specific files in specific directories to do a specific job, while express you could just put it all in random files and it will work.  Ruby also runs sequentially while express runs asynchronous where callbacks are needed.
 ```
 
 ### Question #8
@@ -98,7 +113,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+The first line is creating code 
 ```
 
 ### If You Finish Early...
