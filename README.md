@@ -7,7 +7,8 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+NoSQL database is a non-relational database which does not require one-to-one, one-to-many, and many-to-many relationships. You use NoSQL if you want a flexible database which does not require schema. Also NoSQL is faster than SQL because data is all in the same place.
+You use SQL if your app requires relational database because even though you may still be able to enforce consistency using schemas, you have to make queries to retrieve data connected through a relation.
 ```
 
 ### Question #2
@@ -22,7 +23,8 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
@@ -35,7 +37,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.findOne({name: "Andy"});
+andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"});
 ```
 
 ### Question #4
@@ -52,7 +55,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new
+@author.create!(author_params)
+redirect_to @author, notice: "New author created"
 ```
 
 ## Express
@@ -62,7 +67,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+You can assign particular values to module.exports. Whatever you assign to module.exports will be exposed as a module by setting up using "require()".
 ```
 
 ### Question #6
@@ -76,6 +81,29 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/checkpoint", function(req, res){
+  checkpoint.find({}).then(function(checkpoint){
+    res.render("checkpoint")
+  });
+});
+
+app.post("/checkpoint", function(req, res){
+  Checkpoint.create(req.body.checkpoint).then(function(checkpoint){
+    res.redirect("/checkpoints/" + checkpoint.name);
+  });
+});
+
+app.put("/checkpoints/:name", function(req, res){
+  checkpoint.findOneAndUpdate({name: req.params.name}, req.body, {new: true}).then(function(checkpoint){
+    res.render("checkpoint")
+  });
+});
+
+app.delete("/api/checkpoints/:name", function(req, res){
+  checkpoint.findOneAndRemove({name: req.params.name}).then(function(){
+    res.json({msg: "success"})
+  });
+});
 
 ```
 
