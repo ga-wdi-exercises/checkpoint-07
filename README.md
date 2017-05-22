@@ -8,6 +8,8 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 
 ```text
 Your answer...
+A SQL database is one in which different models can relate to each other. A NoSQL database is one on which different models don't relate to each other.
+On NoSQL databases we can embed documents to other documents to simulate relationships. But If we embed many levels, it is better to use a SQL database.
 ```
 
 ### Question #2
@@ -23,6 +25,9 @@ console.log(results);
 
 ```js
 // Your answer...
+var result = AuthorModel.find({name: "Bob"}, (results) => {
+  console.log(results)
+})
 ```
 
 ### Question #3
@@ -36,6 +41,14 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 
 ```js
 // Your answer...
+var andy = Instructor.findOne({name: "Andy"}, (Instructors) => {
+  console.log(Instructor)
+})
+var new_WishList_item = new wishlist_item({description: "Resin Laying Fugurine, Gold"})
+wishlist_items.push(new_WishList_item)
+new_WishList_item.save(function() => {
+  console.log(new_WishList_item)
+})
 ```
 
 ### Question #4
@@ -53,6 +66,7 @@ author.save(function(err){
 
 ```rb
 # Your answer...
+
 ```
 
 ## Express
@@ -63,6 +77,7 @@ What is module.exports and why do we use it?
 
 ```text
 Your answer...
+Module.export allows us to bring code from one file into another. The module is an object that can be assigned values and those values can be called on another file by requiring the module object.
 ```
 
 ### Question #6
@@ -76,6 +91,16 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/all", (req, res) => {
+  res.send(all)
+})
+app.get("/all/:id", (req, res) => {
+  res.send(req.params.id)
+})
+app.post("/all", (req, res) => {
+  all.create()
+})
+
 
 ```
 
