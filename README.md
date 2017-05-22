@@ -7,7 +7,10 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational databases. Tables are defined with specific schema, and each record is stored in a row. Records in different tables can be linked together using a foreign key. You would use a SQL database if you need to have a strict schema that all entries need to follow, and if you want to keep related data separate from each other (not directly nested within the parent element, but stored within a separate table.)
+
+NoSQL databases are non-relational. Instead of tables, information is stored in a collection. Instead of single records being stored in a row, they are stored in a document. Documents do not have to follow a specific schema, pre-defined schema. Data does not have to be linked together or nested using a foreign key - it can be nested directly within the document it is related to.
+You would use a noSQL database if you have entries that have different properties and do not follow a rigid schema. 
 ```
 
 ### Question #2
