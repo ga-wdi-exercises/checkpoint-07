@@ -21,16 +21,16 @@ What's wrong with this Mongoose code and how might we fix it?
 var results = AuthorModel.find({name: "Bob"});
 console.log(results)
 
-We would need to put the console.log command within a callback function.
-var results = AuthorModel.find({name: "Bob"}, (err, results)=> {
-  console.log(results)
-})
+
 ```
 
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+We would need to put the console.log command within a callback function.
+var results = AuthorModel.find({name: "Bob"}, (err, results)=> {
+  console.log(results)
+})
 ```
 
 ### Question #3
