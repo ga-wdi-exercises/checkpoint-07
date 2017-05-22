@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are characterized as relational whereas NoSQL databases are non-relational. SQL is also table based while NoSQL is document based.
 ```
 
 ### Question #2
@@ -22,7 +22,11 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+Unless `mongoose.model` was set to a variable called `AuthorModel` this line of code will not work. It would probably be better to do:
+
+var Author = mongoose.model('Author')
+var results = Author.find({name: 'Bob'})
+
 ```
 
 ### Question #3
