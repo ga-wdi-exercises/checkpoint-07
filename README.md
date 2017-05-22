@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL is basically a relational database management system where as NoSQL is a non relational database.  NoSQL is flexible and can be used for non uniform data.  Basically its good to use NoSQL when dealing with less complex associations.  SQL is good for more closely associated models that rely on one another.
 ```
 
 ### Question #2
@@ -22,8 +22,8 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
-```
+If I had to change something though I may change find to findOne because findOne returns a single document
+
 
 ### Question #3
 
@@ -35,7 +35,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.save({description: "Resin Laying Deer Figurine, Gold"})
+
 ```
 
 ### Question #4
@@ -52,7 +54,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create (params [:name])
 ```
 
 ## Express
@@ -62,7 +64,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+Its a way of managing dependencies to keep things organized. Assigning module.exports particular values can explicitly define the object that will be brought in when another file requires a file from which we are exporting
 ```
 
 ### Question #6
@@ -84,7 +86,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is opionated software. It makes assumption that there is the best way to do things. and its designed for you to do so.  Express is unopionated and fast.  Its a minmalist web framework using javascript instead of ruby.
 ```
 
 ### Question #8
@@ -98,7 +100,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+These are codes neccesary to implement body parser. body-parser is a piece of express middleware that reads a form's input and stores it as a javascript object accessible through req.body.
 ```
 
 ### If You Finish Early...
