@@ -35,7 +35,13 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}).then(function(instructor){
+    res.json(instructor)
+  });
+
+Instructor.create(req.params.wishlist_items).then(function(instructor){
+  res.json(instructor)
+})
 ```
 
 ### Question #4
