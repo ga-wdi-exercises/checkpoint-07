@@ -68,7 +68,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+`module.exports` is used in regards to the seperation of concerns; instead of putting all of your code in one file, files are wrapped in `module.exports` in order for their variables to be used within seperate files.
 ```
 
 ### Question #6
@@ -82,7 +82,42 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get("/", function(req, res){
+  console.log("index")
+})
 
+app.post("/new", function(req, res){
+  console.log("new")
+})
+
+app.put("/edit", function(req, res){
+  console.log("update")
+})
+
+app.delete("/edit", function(req, res){
+  console.log("delete")
+})
+
+app.get("/api/candidates/:name", function(req, res){
+  Candidate.findOne({name: req.params.name}).then(function(candidate){
+    res.json(candidate)
+  });
+});
+app.post("/api/candidates", function(req, res){
+  Candidate.create(req.body).then(function(candidate){
+    res.json(candidate)
+  })
+});
+app.delete("/api/candidates/:name", function(req, res){
+  Candidate.findOneAndRemove({name: req.params.name}).then(function(){
+    res.json({ success: true })
+  });
+});
+app.put("/api/candidates/:name", function(req, res){
+  Candidate.findOneAndUpdate({name: req.params.name}, req.body, {new: true}).then(function(candidate){
+    res.json(candidate)
+  });
+});
 ```
 
 ### Question #7
