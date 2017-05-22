@@ -6,16 +6,15 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
-```
+NoSQL = Non relational. Dynamic and uses big data sets
+SQL = relational. Ususally contains predefined seed data
 
 ### Question #2
 
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"});
+var results = AuthorModel.findOne({name: "Bob"});
 console.log(results);
 ```
 
