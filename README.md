@@ -98,26 +98,6 @@ app.delete("/edit", function(req, res){
   console.log("delete")
 })
 
-app.get("/api/candidates/:name", function(req, res){
-  Candidate.findOne({name: req.params.name}).then(function(candidate){
-    res.json(candidate)
-  });
-});
-app.post("/api/candidates", function(req, res){
-  Candidate.create(req.body).then(function(candidate){
-    res.json(candidate)
-  })
-});
-app.delete("/api/candidates/:name", function(req, res){
-  Candidate.findOneAndRemove({name: req.params.name}).then(function(){
-    res.json({ success: true })
-  });
-});
-app.put("/api/candidates/:name", function(req, res){
-  Candidate.findOneAndUpdate({name: req.params.name}, req.body, {new: true}).then(function(candidate){
-    res.json(candidate)
-  });
-});
 ```
 
 ### Question #7
@@ -125,7 +105,7 @@ app.put("/api/candidates/:name", function(req, res){
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Well first, Express uses Javascript while Rails uses Ruby. Additionally, Rails is more opinionated than Express is, meaning developers are given more freedom but less structure when using Express as a backend framework. Rails has more strict guidelines.
 ```
 
 ### Question #8
@@ -139,7 +119,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+The first line allows us to handle AJAX requests with JSON bodies. It will run a request through JSON before providing a response (I think).
 ```
 
 ### If You Finish Early...
