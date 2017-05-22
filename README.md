@@ -62,7 +62,14 @@ author.save(function(err){
 ```
 
 ```rb
-@author = Author.create(:name)
+def new
+  Author.new
+end
+
+def create
+  @author = Author.create(:name)
+  redirect_to author_path(@author)
+end
 ```
 
 ## Express
