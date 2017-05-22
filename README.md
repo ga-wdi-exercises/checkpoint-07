@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases have data stored in tables with predefined schema while NoSQL has unstructured data stored in documents, with a dynamic schema.
 ```
 
 ### Question #2
