@@ -43,7 +43,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findby({name: "Andy"})
+andy.push(wishlist_items.save({description: "Resin Laying Deer Figurine, Gold"}))
 ```
 
 ### Question #4
