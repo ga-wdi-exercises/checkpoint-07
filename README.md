@@ -61,7 +61,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+author = Author.create(name: comment_params)
+redirect_to author_path(@author)
 ```
 
 ## Express
@@ -84,7 +85,27 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+// READ
+app.get("/:", (req, res) => {
+  res.send(`hello world`);
+});
+
+// CREATE:
+app.post("/players/:name", (req, res) => {
+  res.send(`hello ${req.body.player_name}`)
+})
+
+// DELETE:
+app.post("/players/:name/delete", function(req, res){
+  Player.findOneandRemove({name: req.params.name})
+  console.log('this player has been deleted')
+})
+
+// UPDATE:
+app.post("/players/:name", function(req, res){
+  Player.findOneandUpdate({name: req.params.name}, req.body.player, {new: true})
+  console.log('this is an updated player')
+})
 
 ```
 
@@ -110,7 +131,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Body parser is a third party middleware that allows us to process information that is provided through forms. It allows us to retrieve the information from a form via a post request. 
+Body parser is a third party middleware that allows us to process information that is provided through forms. It allows us to retrieve the information from a form via a post request.
 ```
 
 ### If You Finish Early...
