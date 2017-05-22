@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are table based databases and NoSQL are are document based.
 ```
 
 ### Question #2
@@ -22,7 +22,8 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = mongoose.model.find({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
@@ -52,7 +53,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+author = Author.new
+user.name = "Shawn"
+
 ```
 
 ## Express
@@ -62,7 +65,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to define an object by assigning a particular value, when another file uses the require() method that we are exporting from.
 ```
 
 ### Question #6
@@ -76,6 +79,9 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get('/', function (req, res){
+  res.send("hello world")
+})
 
 ```
 
@@ -98,7 +104,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+1. Once npm instill body-parser is initialized, line #1 allows us to extract data out of a form.
+2. Line #2 is a middleware that allows us to use different types of JSON
+3. Line #3 servers up anything from assets.
+
 ```
 
 ### If You Finish Early...
