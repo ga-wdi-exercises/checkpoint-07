@@ -9,7 +9,7 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 ```text
 Your answer...
 ```
-SQL databases are table related databases where as NoSQL databases are document related databases
+*SQL databases are table related databases where as NoSQL databases are document related databases*
 
 
 ### Question #2
@@ -26,6 +26,7 @@ console.log(results);
 ```js
 // Your answer...
 ```
+The reason for this is because
 
 ### Question #3
 
@@ -39,6 +40,25 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```js
 // Your answer...
 ```
+*var mongoose= require("./db/connection");
+
+var Instructor = mongoose.model("Instructor");*
+
+
+  *var Instructor = new Instructor({name: req.body.name})
+    instructor.save(function(err){
+      if(!err){
+        res.redirect("instructors")
+      }
+    }
+  }*
+
+
+
+
+  Instructor.find({}).then(function(instructors){
+      instructors: instructors
+    });
 
 ### Question #4
 
@@ -56,6 +76,10 @@ author.save(function(err){
 ```rb
 # Your answer...
 ```
+Author.create(req.body.author).then(function(author){
+  res.redirect("/authors/" + author.name;)
+});
+
 
 ## Express
 
@@ -66,6 +90,7 @@ What is module.exports and why do we use it?
 ```text
 Your answer...
 ```
+*module.exports is a special object included in Node.js. Module is a variable that is represents a module, and exports is an object exposed as a module. module.exports allows us to export code from one file to the next.*
 
 ### Question #6
 
@@ -78,7 +103,21 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get('/'),function(req,res) {
+  res.send('hello world')
+}
 
+app.post('/'),function(res,req){
+  res.send('my name is luisa')
+}
+
+app.put('/'),function(res,req){
+  res.send('good morning')
+}
+
+app.patch('/'),function(req,res){
+  res.send('nice to meet you')
+}
 ```
 
 ### Question #7
@@ -88,6 +127,10 @@ Describe the differences between Express and Rails as backend frameworks.
 ```text
 Your answer...
 ```
+
+Rails generator installs dependencies when project is created. So, only one command is needed for it.
+Express-npm start
+rails- rails s
 
 ### Question #8
 
@@ -102,6 +145,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```text
 Your answer...
 ```
+This is required to process the user input that is received through a form.
 
 ### If You Finish Early...
 
