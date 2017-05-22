@@ -57,7 +57,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(author_params)  //defined in a separate private function
+if save!
+  redirect(@author)
 ```
 
 ## Express
@@ -68,6 +70,9 @@ What is module.exports and why do we use it?
 
 ```text
 Your answer...
+it's a way organizing our app by passing the different parts (of the app) to each other using the 'requires'
+function. It's a way to organize our javascript instead of having 1 giant file.  
+
 ```
 
 ### Question #6
@@ -80,8 +85,22 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+app.get('/', function (req, res) {
+  res.send('hello world')
+})
 
+app.post('/', (req, res) => {
+  res.send('postage')
+})
+
+
+app.put('/', (req,res) => {
+  res.send('update')
+})
+
+app.delete('/',(req,res) => {
+  res.send('delete')
+})
 ```
 
 ### Question #7
@@ -89,7 +108,7 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails has a lot more functionality 'out of the box', whereas express is quite minimalist and requires installing middle ware to gain whatever functionality you might require. Middleware or different packages are equivalent to gems in ruby. A ruby style framework is considered 'opinionated' whereas express and sinatra are not because they don't rely on pre defined configuration.
 ```
 
 ### Question #8
@@ -103,7 +122,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+These lines enable a piece of middleware that lets you extract user input from a field on on the webpage.  
 ```
 
 ### If You Finish Early...
