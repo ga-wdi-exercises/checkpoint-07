@@ -93,7 +93,10 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+1. Express uses JavaScript, Rails uses Ruby
+2. Rails provides us with pre-determined routes based on our models and their relationships. In Express, we define our routes.
+3. Rails provides us with a Gemfile for our dependencies. In Express, we use module.exports to define our dependencies.
+4. Rails provides a robust framework and file structure when a new project is initiated. Express does not provide this - you create a .js file and build your application out from there.
 ```
 
 ### Question #8
@@ -107,7 +110,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Body parser is a third party middleware that allows us to process information that is provided through forms. It allows us to retrieve the information from a form via a post request. 
 ```
 
 ### If You Finish Early...
