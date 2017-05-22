@@ -7,22 +7,25 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+Sql databases are relational. The tables relate to each other via foreign keys. NoSQL are non-relational and don't require a schema, however, one can embed data in order to create relationships.
 ```
 
 ### Question #2
 
 What's wrong with this Mongoose code and how might we fix it?
 
+
 ```js
-var results = AuthorModel.find({name: "Bob"});
-console.log(results);
+var results = AuthorModel.findOne({name: "Bob"})
+  console.log(results);
+
+
 ```
 
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+.find returns an array. to get the specific object use either findOne() or results[0].
 ```
 
 ### Question #3
@@ -30,12 +33,14 @@ console.log(results);
 Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 
 ```rb
-@andy = Instructor.find_by(name: "Andy")
-@andy.wishlist_items.create(description: "Resin Laying Deer Figurine, Gold")
+let andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.findOne({name: "Andy"})
+let item = new wishlist_item({description: "Resin Laying Deer Figurine, Gold"})
+andy.wishlist_items.push(item)
 ```
 
 ### Question #4
