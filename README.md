@@ -9,6 +9,8 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 ```text
 Your answer...
 ```
+SQL databases are table related databases where as NoSQL databases are document related databases
+
 
 ### Question #2
 
