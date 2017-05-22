@@ -22,7 +22,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+// I'm not completely sure about this, but I think this is the correct answer because just using find will return all documents that have the name: "Bob"
+var results = AuthorModel.findOne({name: "Bob"});
+console.log(results);
 ```
 
 ### Question #3
@@ -35,7 +37,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.push({description: "Resin Laying Deer Figurine, Gold"})
+andy.save()
 ```
 
 ### Question #4
