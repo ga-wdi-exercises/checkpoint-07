@@ -22,7 +22,9 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+
+var results = AuthorModel.findBy(name:"Bob");
+console.log(results);
 ```
 
 ### Question #3
@@ -35,7 +37,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findBy(name:"Andy")
+andy.wishlistItems.create(description: "Resin Laying")
 ```
 
 ### Question #4
@@ -52,7 +55,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create(name: "name")
+redirect_to author: @author
 ```
 
 ## Express
@@ -62,7 +66,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+It help us contain our code and the ability to provide only the bits that are needed at a certain file.
 ```
 
 ### Question #6
@@ -76,6 +80,18 @@ var express = require("express");
 var app = express();
 
 // Your code starts here...
+app.get('/students', function (res, req) {
+  console.log(res)
+})
+app.get('/hello/:name', function (res, req) {
+  console.log(res)
+})
+app.delete('/hello/:name', function (res, req) {
+  console.log(res)
+})
+app.put('/:hello', function (res, req) {
+  console.log(res)
+})
 
 ```
 
@@ -84,7 +100,8 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails out of the box very configured backend frameworks that gives a lot a function but at times it is limited.
+Express is a light weight and flexible backend frameworks, it is much more customizable uses the same language of the web JS.
 ```
 
 ### Question #8
@@ -98,7 +115,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+The first one  will not accept traditional post requests and renders Json only.
+urlencoded will accept traditional HTTP requests.
 ```
 
 ### If You Finish Early...
