@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database stores information in rows and columns within a table.  It adheres to a rigid format, and is good for complicated nested data structures.  A NoSQL database stores information in documents within collections.  It is a more flexible format, and is beneficial when customization and flexibility are desired, and when there aren't multiple levels of nested data. 
 ```
 
 ### Question #2
@@ -22,7 +22,8 @@ console.log(results);
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+it should just be
+var results = Author.find({name: "Bob"});
 ```
 
 ### Question #3
@@ -35,7 +36,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.find({name: "Andy"})
+
 ```
 
 ### Question #4
@@ -52,7 +54,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create(params[:name])
 ```
 
 ## Express
@@ -62,7 +64,7 @@ author.save(function(err){
 What is module.exports and why do we use it?
 
 ```text
-Your answer...
+module.exports makes available the code we need in another file.  we use it since we can't just use script tags to link files together
 ```
 
 ### Question #6
@@ -75,7 +77,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express");
 var app = express();
 
-// Your code starts here...
+def "/index" {
+	console.log("put")
+}
+
+def "/index/new" {
+	console.log("post")
+}
+
+def "/index/id/edit" {
+	console.log("patch")
+}
+
+def "/index/id/delete" {
+	console.log("delete")
+}
 
 ```
 
@@ -84,7 +100,9 @@ var app = express();
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is a highly opinionated framework (there is the idea that there is a best way to do things and there are built in functions that will help you if you follow the right conventions).  It is rigid (you must follow the conventions) and not lightweight (a ton of files are included).  The language used with it is Ruby.  
+
+Express on the other hand is very minimalistic and flexible.  The philosophy is only include what you need. Very little is provided initially with the idea that the developer can bring in whatever additional tools they require.  The language used with it is Javascript. 
 ```
 
 ### Question #8
@@ -98,7 +116,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+the first line brings in body-parser so you can use data from forms, and sets it to a variable called bodyParser
+the second line initializes bodyParser
+
 ```
 
 ### If You Finish Early...
