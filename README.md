@@ -2,7 +2,7 @@
 
 ## Mongoose
 
-### Question #1
+### Question 1
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
@@ -10,13 +10,13 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 Your answer...
 ```
 
-### Question #2
+### Question 2
 
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"});
-console.log(results);
+var results = AuthorModel.find({name: "Bob"})
+console.log(results)
 ```
 
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
@@ -25,9 +25,9 @@ console.log(results);
 // Your answer...
 ```
 
-### Question #3
+### Question 3
 
-Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
+Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code...
 
 ```rb
 @andy = Instructor.find_by(name: "Andy")
@@ -38,9 +38,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code:
 // Your answer...
 ```
 
-### Question #4
+### Question 4
 
-Convert the following create method in Mongoose to ActiveRecord.
+Convert the following create method in Mongoose to ActiveRecord...
 
 ```js
 var author = new Author({name: req.body.name})
@@ -57,29 +57,29 @@ author.save(function(err){
 
 ## Express
 
-### Question #5
+### Question 5
 
-What is module.exports and why do we use it?
+What is `module.exports` and why do we use it?
 
 ```text
 Your answer...
 ```
 
-### Question #6
+### Question 6
 
 Write one Express route for each of the four HTTP methods.
 
 Then, make each route respond with a one-word string containing the RESTful action that would most likely be associated with this route.
 
 ```js
-var express = require("express");
-var app = express();
+var express = require("express")
+var app = express()
 
 // Your code starts here...
 
 ```
 
-### Question #7
+### Question 7
 
 Describe the differences between Express and Rails as backend frameworks.
 
@@ -87,7 +87,7 @@ Describe the differences between Express and Rails as backend frameworks.
 Your answer...
 ```
 
-### Question #8
+### Question 8
 
 What do the following lines of code do?
 
