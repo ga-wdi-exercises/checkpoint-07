@@ -67,7 +67,7 @@ Your answer...
 
 ### Question 6
 
-Write one Express route for each of the four HTTP methods.
+Write one Express route for each of the four CRUD actions.
 
 Then, make each route respond with a one-word string containing the RESTful action that would most likely be associated with this route.
 
