@@ -7,6 +7,8 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
+NOSQL (Non-Relational DB) => Has no explicit one-to-one, one-to-many, or many-to-many
+SQL - opposite of above ^^
 Your answer...
 ```
 
@@ -22,6 +24,11 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
+var results = {
+  index() {
+    AuthorModel.find({name: "Bob"} => {
+    console.log(results);
+  });
 // Your answer...
 ```
 
@@ -35,6 +42,14 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
+var studentsController = {
+  show() {
+    Student.find({}, (err, students) => {
+    console.log(students);
+    })
+  }
+
+studentsController.show({name: "Andy"})
 // Your answer...
 ```
 
@@ -52,6 +67,7 @@ author.save(function(err){
 ```
 
 ```rb
+var author = new Author(name: "req.body.name")
 # Your answer...
 ```
 
@@ -62,6 +78,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
+module.exports allows other files such as (seed.js, schema.js, models.js, and index.js) to use collections or variables declared in current file.
 Your answer...
 ```
 
@@ -76,6 +93,31 @@ var express = require("express")
 var app = express()
 
 // Your code starts here...
+//INDEX
+app.get('/random', function (req, res) {
+  Random.find({}).then(function(randoms) {
+    res.send('GET ME - INDEX ROUTE');
+  });
+});
+// Find ONE
+app.post('/random/:name', function (req, res) {
+  Random.findOne({name: req.params.name}).then(function() {
+      res.send('POST ME - SHOW ROUTE')
+  });
+});
+// Update it
+app.put('/', function (req, res) {
+  Random.FindOneAndUpdate({name: req.params.name}, req.body.random, {new: true}).then(function(random) {
+    res.send('UPDATE ME - SHOW ROUTE');
+  });
+});
+
+// Delete it
+app.delete('/', function (req, res) {
+  Random.FindOneAndRemove({}).then(function() {
+    res.send('DELETE ME - INDEX ROUTE')
+  });
+});
 
 ```
 
@@ -84,6 +126,8 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
+Express => middleware
+Rails => backend framwork with built in functionality for easy compiling and reusability.
 Your answer...
 ```
 
@@ -98,6 +142,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
+app.use(bodyParser.urlencoded({extended: true}))=> Parses text as URL encoded data for webpage routing and allows easy use to req.body.
+
+app.use(bodyParser.json())=> Parses json and allows easy use to req.body
 Your answer...
 ```
 
