@@ -7,7 +7,10 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database carries relations while a NoSQL database has no relationships or dependencies
+NoSQL databases are more focused on key-value pairs and SQL databases are more based on tables,
+rows, and columns. A NoSQL database is good when being used with mongoose to avoid latency. And an
+SQL database is good when being used with Rails.
 ```
 
 ### Question 2
@@ -22,7 +25,9 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, function(err, docs) {
+  console.log(docs);
+});
 ```
 
 ### Question 3
@@ -35,7 +40,12 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+this.andy = Instructor.findOne({name: "Andy"})
+this.create = () => {
+  this.wishlist_items.$save().then(() => {
+    $state.go("show", {andy: andy.description})
+  })
+}
 ```
 
 ### Question 4
@@ -52,7 +62,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(author_params)
+@author.save
+redirect_to_authors_path(@author)
 ```
 
 ## Express
@@ -62,7 +74,9 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to be able to export code from one file into another.
+This allows for the files to linked easier and data to pass through more seemlessly
+and allows for more methods to be called within the files allowing for less repetition.
 ```
 
 ### Question 6
@@ -76,7 +90,21 @@ var express = require("express")
 var app = express()
 
 // Your code starts here...
+app.get('/', (req,res) => {
+  console.log('GET');
+})
 
+app.post('/random', (req,res) => {
+  console.log('PUT');
+})
+
+app.post('/random/:id', (req,res) => {
+  console.log('POST');
+})
+
+app.delete('/random/:id', (req,res) => {
+  console.log('DELETE');
+})
 ```
 
 ### Question 7
@@ -84,7 +112,10 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is a server framework that is built to be modeled like Sinatra. Express
+allows for more freedom in being able to build a back end app in comparison to
+Rails because the Rails format is very very structured and the Express back end uses
+JavaScript while Rails uses Ruby. Rails unlike Express is built around the Model, View, Controller.
 ```
 
 ### Question 8
@@ -98,7 +129,11 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+what the require('body-parser') is doing is creating the middleware code that is
+running between the receiving of the request and responding
+app.use(bodyParser.json()) is parsing the text as a json
+appuse(bodyParser.urlencoded({extended: true})) it gets immidieately fired as a
+key-value pair in json that will return true to be able to execute the code
 ```
 
 ### If You Finish Early...
