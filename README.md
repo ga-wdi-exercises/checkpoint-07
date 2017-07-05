@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is a relational database that follows a more rigid structure and requires schemas/ stores data in tables, while a NoSQL database is non-relational, is organized into documents and collections, and allows for greater flexibility. NoSQL databases scale out better than relational databases and are preferred for web applications, while SQL databases are preferred for enterprises because of better security models and mature data storage.
 ```
 
 ### Question 2
@@ -22,7 +22,11 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+The Mongoose queries are asynchronous, so we want to include a callback that will print the author model to the console, to ensure that the query has finished first.
+
+AuthorModel.find({name: "Bob"}, (results) => {
+  console.log(results);
+})
 ```
 
 ### Question 3
@@ -35,7 +39,10 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: "Andy"}).then((andy) => {
+  var item = new wishlistItem({description: "Resin Laying Deer Figurine, Gold"})
+  andy.wishlistItems.push(item)
+})
 ```
 
 ### Question 4
@@ -52,7 +59,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(name: params[:name])
+@author.save
+redirect_to authors_path
 ```
 
 ## Express
@@ -62,7 +71,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to essentially export an object from one file to other files, making the variables global. This is very useful because we can separate our js files and keep our code more organized.
 ```
 
 ### Question 6
@@ -75,7 +84,21 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/", (req,res) => {
+  console.log("Show")
+})
+
+app.post("/", (req,res) => {
+  console.log("Create")
+})
+
+app.put("/", (req,res) => {
+  console.log("Update")
+})
+
+app.delete("/", (req,res) => {
+  console.log("Destroy")
+})
 
 ```
 
@@ -98,7 +121,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+body-parser is middleware that extracts the body of an incoming request and exposes it as req.body to make it easy to interact with in express.
 ```
 
 ### If You Finish Early...
