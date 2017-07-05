@@ -46,7 +46,7 @@ Convert the following create method in Mongoose to ActiveRecord...
 var author = new Author({name: req.body.name})
 author.save(function(err){
   if (!err){
-    res.redirect("authors")
+    res.redirect("/authors")
   }
 })
 ```
