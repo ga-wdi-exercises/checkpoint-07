@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL database has relationship as NoSql database does not. NoSql database is used with mongoose to avoid latency.
 ```
 
 ### Question 2
@@ -22,7 +22,9 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+app.get("/authors/:name", function{req, res}){
+
+}
 ```
 
 ### Question 3
@@ -35,8 +37,12 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
-```
+function findByname(name) {
+  Instructor.find({name: name}, (instructors) => {
+    console.log(instructors)
+  })
+}
+`
 
 ### Question 4
 
@@ -52,7 +58,7 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author.name.new("Author")
 ```
 
 ## Express
@@ -62,7 +68,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+Module.exports allows us to import code from one file to another. When you want an object returned to require a function instead of just properties with object and then module.exports is used.
 ```
 
 ### Question 6
@@ -75,7 +81,29 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get('/', function(req, res){
+  res.send('hello world');
+});
+
+app.Post('/api/car', function(req, res){
+  Car.create(req.body).then(function(food){
+    res.json(food)
+  });
+});
+
+
+app.put('/api/car', function(req, res){
+  Car.findOneAndUpdate({shop: req.params.shop}, req.body, {new: true}).then(function(car){
+    res.json(cars)
+  });
+});
+
+app.put('/api/car', function(req, res){
+  Car.findOneAndUpdate({shop: req.params.shop}, req.body, {new: true}).then(function(car){
+    res.json(cars)
+  });
+});
+
 
 ```
 
@@ -84,7 +112,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express contains just Javascript and rails is under ruby and different language and doesnt use Javascript
 ```
 
 ### Question 8
@@ -98,7 +126,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Need body-parser and we can reference it
+app.use(bodyParser.urlencoded({extended: true})) = It configures the parser to support html forms.
 ```
 
 ### If You Finish Early...
