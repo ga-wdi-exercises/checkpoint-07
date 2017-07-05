@@ -46,7 +46,7 @@ Convert the following create method in Mongoose to ActiveRecord...
 var author = new Author({name: req.body.name})
 author.save(function(err){
   if (!err){
-    res.redirect("authors")
+    res.redirect("/authors")
   }
 })
 ```
@@ -67,7 +67,7 @@ Your answer...
 
 ### Question 6
 
-Write one Express route for each of the four HTTP methods.
+Write one Express route for each of the four CRUD actions.
 
 Then, make each route respond with a one-word string containing the RESTful action that would most likely be associated with this route.
 
