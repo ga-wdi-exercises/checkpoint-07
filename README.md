@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+NoSQL is a no relational database (no relationships, 1-1 or 1 to many etc). Use NoSQL for flexibility and faster process time. Use SQL for structure and when you need relations.   
 ```
 
 ### Question 2
@@ -22,7 +22,7 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.findOne({name: "Bob"})
 ```
 
 ### Question 3
@@ -35,7 +35,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question 4
@@ -52,7 +53,11 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(body_params)
+if @author.save!
+  redirect_to @author
+else
+  redirect_to root_path, alert: "error"
 ```
 
 ## Express
@@ -62,7 +67,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+Encapsulated code in a special object that can be utilized in other files.
 ```
 
 ### Question 6
@@ -75,8 +80,27 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/pets", (req, res)=>{
+  res.send(`hello world`)
+})
 
+app.post("/pets", (req, res)=>{
+  Pet.create(req.body.pet).then((pet)=>{
+    res.redirect(`/pets/pet.name`)
+  })
+})
+
+app.post("/pets/:name", (req,res)=>{
+  Pet.findOneandUpdate({name: req.params.name}, req.body.pet, {new: true}).then(()=>{
+    res.redirect(`/pets/pet.name`)
+  })
+})
+
+app.post("/pets/:name/delete", (req,res)=>{
+  Pet.findOneandRemove({name: req.params.name}).then(()=>{
+    res.redirect(`/pets`)
+  })
+})
 ```
 
 ### Question 7
@@ -84,7 +108,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is un-opinionated and more flexible/freedom, Rails is opinionated and has conventions with lots of default files on initial setup. Express is lean framework, Rails is not.
 ```
 
 ### Question 8
@@ -98,7 +122,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Bring in the body-parser middleware we installed into our file to use and store this to a variable to reference throughout the file. Second line is to handle json post request. The third line is to handle form submissions. 
 ```
 
 ### If You Finish Early...
