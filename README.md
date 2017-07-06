@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A NoSql database is a non-relational database and allows for faster querying because data is denormalized. It is also more flexible because a schema does not need to be followed. A SQL database is a relational database and is used to establish one-to-many and other types of relationships between data.
 ```
 
 ### Question 2
@@ -22,7 +22,10 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+We use .findOne to find a specific model, .find would return all of the models.
+
+var results = AuthorModel.findOne({name: "Bob"}, callback)
+console.log(results)
 ```
 
 ### Question 3
@@ -35,7 +38,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({name: "Andy"})
+var andy.wishlistItems.create(description: "Resin Laying Deer Figurine, Gold")
 ```
 
 ### Question 4
@@ -52,7 +56,14 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+def new
+  @author = Author.new
+end
+
+def create
+  @author = Author.create!(name: params[:name])
+  redirect_to authors_path(@author)
+end
 ```
 
 ## Express
@@ -62,7 +73,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to define the object being brought in by require().
 ```
 
 ### Question 6
@@ -75,8 +86,27 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  res.send("Get");
+})
 
+app.post("/persons", function(req, res){
+  Person.create(req.body.person).then((person) => {
+    res.send("Post");
+  })
+});
+
+app.post("/persons/:name", function(req, res){
+  Person.findOneAndUpdate({name: req.params.name}, req.body.person, {new: true}).then((person) => {
+    res.send("PUT");
+  });
+});
+
+app.post("/persons/:name/delete", function(req, res){
+  Person.findOneAndRemove({name: req.params.name}).then(function(){
+    res.send("Delete");
+  });
+});
 ```
 
 ### Question 7
@@ -84,7 +114,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails relies on convention over configuration and is a heavy framework. Many needed programs are included such as middleware. Express is suppose to be a light framework that allows a high level of custom configuration. Express has the advantage of being able to use Javascript on the backend.
 ```
 
 ### Question 8
@@ -98,7 +128,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+body-parser is a middleware that is needed to talk between the front-end and back-end frameworks in Javascript. The lines above require the use of it and allow data to be sent as json in the first .use and as html in the second .use.
 ```
 
 ### If You Finish Early...
