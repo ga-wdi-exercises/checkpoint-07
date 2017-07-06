@@ -8,6 +8,7 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 
 ```text
 Your answer...
+SQL database can be taxing to manipulate/store the data in our database and can, in fact, slow down our app, especially when we are dealing with complex associations. SQL is a table based databases while NoSQL databases are document based that can provide high performance, high availability and automatic scaling as far as the database is concerned.
 ```
 
 ### Question 2
@@ -23,6 +24,9 @@ console.log(results)
 
 ```js
 // Your answer...
+var results = AuthorModel.find_by({name: "Bob"})
+
+
 ```
 
 ### Question 3
@@ -36,6 +40,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 
 ```js
 // Your answer...
+var andy = document.getElementByName("Andy");
+var andy = wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question 4
@@ -53,6 +59,12 @@ author.save(function(err){
 
 ```rb
 # Your answer...
+get '/authors' do
+  @names = names
+
+redirect "/authors"
+end
+
 ```
 
 ## Express
@@ -63,6 +75,7 @@ What is `module.exports` and why do we use it?
 
 ```text
 Your answer...
+whenever we put module.exports in a file, all the objects or functions in the file will be accessible from another file.
 ```
 
 ### Question 6
@@ -76,6 +89,20 @@ var express = require("express")
 var app = express()
 
 // Your code starts here...
+app.get("/", (req, res) => {
+  res.render("welcome")
+})
+app.get("/:name", (req, res) => {
+  res.send(`hello ${req.params.name}`)
+})
+app.post('/names', (req, res) => {
+  console.log(req.body)
+})
+app.post("/:name/new", function(req, res){
+  authors.push(req.body.name);
+  var name = req.params.name;
+  res.redirect('/' + name);
+});
 
 ```
 
@@ -85,6 +112,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ```text
 Your answer...
+Express is a backend framework written in JS language while Rails is for Ruby.
 ```
 
 ### Question 8
@@ -99,6 +127,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 ```text
 Your answer...
+It is a middleware that is used to handle form submissions in Express
 ```
 
 ### If You Finish Early...
