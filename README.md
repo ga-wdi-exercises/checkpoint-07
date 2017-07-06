@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+NoSQL has no relations. You could use it for objects/models that don't necessarily "belong" to each other, closer to OOP. Or if you need to add/modify fields it's easier.
 ```
 
 ### Question 2
@@ -22,7 +22,7 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+// Do you need to change it to results.name?  I'm not entirely sure about returning a whole model
 ```
 
 ### Question 3
@@ -35,8 +35,15 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+function findName(instructor){
+  Instructor.findOne({name: instructor})
+}
+var andy = Instructor.findName("andy")
+
+andy.wishlist_items.create({ description: 'Resin Laying Deer Figurine, Gold'})
+
 ```
+
 
 ### Question 4
 
@@ -52,7 +59,13 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+#class AuthorController < ApplicationController
+#   def create
+#     author = Author.createauthor(params[:name])
+#     author.save
+#   end
+# end
+# I think.
 ```
 
 ## Express
@@ -62,7 +75,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+It's the object that gets returned as the result of a require call.
 ```
 
 ### Question 6
@@ -76,6 +89,22 @@ var express = require("express")
 var app = express()
 
 // Your code starts here...
+app.get('/get', function (req, res) {
+  res.send('Read')
+});
+
+app.post('/post', function (req, res) {
+  res.send('create')
+});
+
+app.put('/put', function (req, res) {
+  res.send('Update')
+});
+
+app.delete('/delete', function (req, res) {
+  res.send('destroy')
+
+});
 
 ```
 
@@ -85,6 +114,7 @@ Describe the differences between Express and Rails as backend frameworks.
 
 ```text
 Your answer...
+Rails seems easier if you have all your data, models, etc planned out beforehand with simple CRUD functions.  Express seems more flexible and less tightly structured
 ```
 
 ### Question 8
@@ -99,6 +129,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 ```text
 Your answer...
+Handles specific urlencoded requests and the data that's returned
 ```
 
 ### If You Finish Early...
