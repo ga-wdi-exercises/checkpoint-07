@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A sequel database contains information that follows a specific format. This kind of database may be used when storing items in a store. A noSQL database is a database that doesn't follow a specific format. You can store entire javascript objects in these types of databases. Hospitals may tend to store their patient records in a NoSQL database
 ```
 
 ### Question 2
@@ -15,7 +15,7 @@ Your answer...
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"})
+var results = AuthorModel.findOne({name: "Bob"})
 console.log(results)
 ```
 
@@ -35,7 +35,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+const andy = Instructor.findOne({name: 'Andy'});
+andy = andy.wishlistItems.create({description: "Resin Laying Deer Figurine, Gold"})
 ```
 
 ### Question 4
@@ -52,7 +53,10 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create({name: params['name']})
+@author.save!
+
+redirect_to authors_path
 ```
 
 ## Express
@@ -62,7 +66,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports allows us to import code from other files. What ever is wrapped in the curly brakets after module.exports can be used on what ever page requires it.
 ```
 
 ### Question 6
@@ -76,6 +80,34 @@ var express = require("express")
 var app = express()
 
 // Your code starts here...
+app.get('/authors', (req, res)=> {
+    res.send('GET Read')
+})
+
+app.post('/authors', (req, res)=> {
+    res.send('POST Create')
+})
+
+app.put('/authors/:name', (req, res)=> {
+    var author;
+    Author.findOne({name: req.params.name}, (err, author)=> {
+        if(err){
+            console.log('Author doesn't exist')
+        } else {
+            author.name = req.body.name;
+            author.save((err)=> {
+                if(err){
+                    res.send(err)
+                } else {
+                    res.send('PUT Updated')
+                }
+
+            })
+        }
+
+    });
+
+})
 
 ```
 
@@ -84,7 +116,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is a minimalist framework designed for developer configuration. The developer is given the option to import the modules they would like to use in their application. Rails is designed for convention. There are many set practices and procedures the developer is expected to follow when creating a rails app.
 ```
 
 ### Question 8
@@ -98,7 +130,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+
 ```
 
 ### If You Finish Early...
