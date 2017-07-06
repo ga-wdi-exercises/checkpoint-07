@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is structured around associations. For instance, a post can have many comments and a comment can belong to one post. A NoSQL database is more loosely structured and does not base itself on associations, though there can be relationships between models.
 ```
 
 ### Question 2
@@ -22,7 +22,9 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"}, results)
+console.log(results)
+
 ```
 
 ### Question 3
@@ -35,7 +37,10 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.find({name: "Andy"}).then((description)=>{
+  wishlist_items.create({description: "Resin Laying deer Figurine, Gold"})
+})
+
 ```
 
 ### Question 4
@@ -52,7 +57,16 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+# new
+  def new
+    @author = Author.new
+  end
+
+  # create
+  def create
+    author = Author.create!(author_params)
+    redirect_to "/authors"
+  end
 ```
 
 ## Express
@@ -62,7 +76,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+Module.exports defines objects that are to be exported with that file is 'required'
 ```
 
 ### Question 6
@@ -75,7 +89,24 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
+
+app.post('/quotes', (req, res) => {
+  console.log('Hello!')
+})
+
+app.post('/quotes/:title', (req,res)=>{
+  quote.findOneandUpdate({req.params.title}), req.body.quote, {new: true})
+  res.redirect('/quotes/' + quote.title);
+})
+
+app.post("/quotes/:title/delete", function(req,res){
+  quote.findOneAndRemove({req.params.name}).then(function(){
+    res.redirect("/quotes")
+  });
+});
 
 ```
 
@@ -84,7 +115,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is based more on convention in that it comes prepackaged with a lot of structure and tools. Express developers liked more minimalism and allows the user to create more structure to the backend.
 ```
 
 ### Question 8
@@ -98,7 +129,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+The first line requires bodyParser as middleware. The second line allows json post requests. The third line handles form submissions.
 ```
 
 ### If You Finish Early...
