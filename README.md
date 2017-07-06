@@ -10,6 +10,14 @@ Describe the differences between a SQL and NoSQL database, and when you might us
 Your answer...
 ```
 
+noSQL is document based and SQL is relational based.
+
+noSQL is document based key-valued pair of infomation while SQL is table database.
+
+if you want to use the database for a more structured format of information handling, you would use SQL.
+
+noSQL if you plan of using an unstructured, it can be lightweight and information processing is fast in the case.
+
 ### Question 2
 
 What's wrong with this Mongoose code and how might we fix it?
@@ -24,7 +32,8 @@ console.log(results)
 ```js
 // Your answer...
 ```
-
+var results = AuthorModel.find({name: "Bob"})
+console.log(AuthorModel)
 ### Question 3
 
 Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code...
@@ -37,6 +46,12 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```js
 // Your answer...
 ```
+
+var findIns = Instructor.find({name: "Andy"})
+	findIns.then((findIns.description) => {
+	findIns.create(req.wishlist_items)
+	})
+	
 
 ### Question 4
 
@@ -54,6 +69,9 @@ author.save(function(err){
 ```rb
 # Your answer...
 ```
+author = Author.where(name:)
+if author.body.save 
+render 'new'
 
 ## Express
 
@@ -64,6 +82,11 @@ What is `module.exports` and why do we use it?
 ```text
 Your answer...
 ```
+module.exports is a default object in Node.JS
+
+module is the bariable that is the current model, exports is an object for the module.
+
+
 
 ### Question 6
 
@@ -78,6 +101,18 @@ var app = express()
 // Your code starts here...
 
 ```
+//reading
+app.get('/', function(req, res) {
+	res.render("express")
+})
+//posting
+app.post('/', (req, res) => {
+	res.render(express)
+})
+//show
+app.get('/', (req, res) => {
+	var this = db.collection('something').find()
+})
 
 ### Question 7
 
