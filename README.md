@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database will usually have tables that require relationships while a NoSQL database doesn't need relationaships. Also you can't use join tables in NoSQL
 ```
 
 ### Question 2
@@ -22,7 +22,8 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"})
+console.log(AuthorModel)
 ```
 
 ### Question 3
@@ -35,7 +36,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+Instructor.findById(name: "Andy")
+var andy.wishlistItems = ne
 ```
 
 ### Question 4
@@ -52,7 +54,10 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+get 'authors' do
+  @authors = Authors.all
+  erb: "authors/index"
+end
 ```
 
 ## Express
@@ -62,7 +67,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+A special object which is included in every js file in the Node.js application by default. Module is a variable that represents current module and exports is an object that will be exposed as a module
 ```
 
 ### Question 6
@@ -75,7 +80,22 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/", function(req, res){
+  res.render("./index");
+});
+
+app.post("/candidates", function(req, res){
+  Candidate.create(req.body.candidate).then((candidate) =>{
+    res.redirect("candidates/" + candidate.name)
+  })
+
+  destroy: function(req){
+    AuthorModel.findOneAndRemove(req, function(err, docs){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(docs);
 
 ```
 
@@ -84,7 +104,9 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is a heavy framwork meaning that when creating an application with rails it assumes that you will need a lot of files and will create them.
+
+Express is a lean framework meaning that it will start you off with the bare minimum and you can add as needed.
 ```
 
 ### Question 8
@@ -98,7 +120,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+app.use(bodyParser.json()) - Handels json post requests
+app.use(bodyParser.urlencoded({extended: true})) - handles form submissions
 ```
 
 ### If You Finish Early...
