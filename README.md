@@ -91,6 +91,7 @@ var app = express()
 
 app.get('/', function(req,res) {
   a.find({})
+  res.render("index")
 
 })
 
