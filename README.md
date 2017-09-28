@@ -7,7 +7,10 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+- NoSQL- No explicit One-to-One, one-to-many and many-to-many relationships.
+- SQL- Use of One-to-One, one-to-many and many-to-many relationships.
+- SQL databases uses SQL ( structured query language ) for defining and manipulating the data.  - In NoSQL database, queries are focused on collection of documents.
+
 ```
 
 ### Question 2
@@ -22,7 +25,7 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+// Your answer..
 ```
 
 ### Question 3
@@ -33,9 +36,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 @andy = Instructor.find_by(name: "Andy")
 @andy.wishlist_items.create(description: "Resin Laying Deer Figurine, Gold")
 ```
-
 ```js
 // Your answer...
+var Instructor = InstructorModel.find({name: "Andy"})
 ```
 
 ### Question 4
@@ -62,7 +65,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+Your answer...: module is a variable that represents current module and exports is an object that will be exposed as a module.
 ```
 
 ### Question 6
@@ -84,7 +87,8 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Your answer: Rails is opinionated and express isn't.Frameworks that leverage inference and "convention over configuration" are called opinionated. Rails does this so therefore rails is opinionated.
+Express allows a lot of freedom in how we structure our application, its routes, resources and assets etc. Meaning we have to do more ourselves. Which makes Express un-opinionated. Therein lies the differences.
 ```
 
 ### Question 8
@@ -98,7 +102,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Your answer: var bodyParser..- is used so we can reference bodyParser later.
+app.use...- is used to configure the parser to support html forms.
 ```
 
 ### If You Finish Early...
