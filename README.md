@@ -6,9 +6,9 @@
 
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
-```text
-Your answer...
-```
+SQL: is a relational table. If you delete something in one table, have to delete the same row in connected table. Because of the relations, it can slow down the application. More likely to be used in Ruby
+
+NoSQL: database that doesn't have to have relations. Used when data requirements aren't clear of if you're dealing with a lot of unstructured data
 
 ### Question 2
 
@@ -22,7 +22,7 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+console.log(results.name)
 ```
 
 ### Question 3
@@ -35,7 +35,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+Instructor.findOne({name: 'Andy'}).then(function(response){
+  response.wishlist_items.push({description: "resin Laying Deer Figurine, Gold"})
+}
 ```
 
 ### Question 4
@@ -52,7 +54,9 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+author = Author.new(name: params[:name])
+author.save
+redirect_to "authors_path"
 ```
 
 ## Express
@@ -62,7 +66,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+it exports code found in one file and makes it available to every other file in the same project
 ```
 
 ### Question 6
@@ -75,7 +79,29 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/", function (req, res){
+  Item.find({}).then(function(items){
+    res.render("Get Method")
+  })
+})
+
+app.post("/items", function (req, res){
+  Author.create(req.body.name).then(function(){
+    res.send("Create method")
+  })
+})
+
+app.post("/items/:name", function (req, res){
+  Item.findOneAndUpdate({name: req.params.name}, req.body.item, {new:true}).then(function(item){
+    res.render('Update method')
+  })
+})
+
+app.post("/items/:name/delete", function(req, res){
+  Item.findOneAndRemove({name: req.params.name}).then(function(){
+    res.render('Delete method');
+  });
+});
 
 ```
 
@@ -84,7 +110,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is very minimalist and doesn't make you follow its conventions. Rails is very opinionated and makes you follow its conventions*/
 ```
 
 ### Question 8
@@ -98,7 +124,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+it allows you to get access to the data when you type app.post()
 ```
 
 ### If You Finish Early...
