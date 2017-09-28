@@ -7,7 +7,9 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases uses relational tables to organize its records. Its table columns are pre-defined, and the relationship between tables need to be defined as well. Navigation is done with SQL commands, but an ORM can be used to tie it to the server backend models.
+
+NoSQL databases are organized as collections of documents, and does not follow a relational structure. Although schemas can be defined, its not required for documents in a collection to all follow a specific structure. This is makes complex relationships and scaling much easier in NoSQL databases. It uses an ODM to be interact with your server backend models.     
 ```
 
 ### Question 2
@@ -22,7 +24,7 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+The method 'AuthorModel.find({})' is used to return all documents that correlate with the parameters of your query. 'AuthorModel.findOne' will return the document with name Bob.
 ```
 
 ### Question 3
@@ -35,7 +37,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.push[{description: "Resin Laying Deer Figurine, Gold"}]
 ```
 
 ### Question 4
@@ -52,7 +55,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(author_params)
+@author.save
 ```
 
 ## Express
@@ -62,7 +66,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+'module.exports' is used when we separate our concerns to different directories in Express(Node.js). Whatever we define to be exported in the module, will then be available when we require that module in a different directory or module.  
 ```
 
 ### Question 6
@@ -75,7 +79,30 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+
+
+var person = new Person({name: "Bob"})
+
+
+app.get('/', (req, res) => {
+  res.send("Get Index / READ")
+})
+
+app.post('/', (req, res) => {
+  Person.create(req.params.name)
+  res.send("Post Index / CREATE")
+})
+
+app.post('/:name', (req, res) => {
+  Person.findOneAndUpdate({name: req.params.name}, req.body.person, {new: true})
+  res.send("Post Person.name / UPDATE")
+})
+
+app.post("/:name/delete", (req, res) => {
+  Person.findOneAndRemove({name: req.params.name})
+  res.send("Delete Person.name / DESTROY")
+})
+
 
 ```
 
@@ -84,7 +111,9 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is very opinionated and strongly urges the developers to follow its conventions. The benefits are that its quicker to set up simply following procedures, and its conventions stay consistent throughout projects and developers.
+
+Express is un-opinionated and grants the developer freedom in how to structure the backend. The benefits are that developers can work with their style, make decisions on what to include and what to leave out for optimization.
 ```
 
 ### Question 8
@@ -98,7 +127,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Allows for parsing of the json object that is submitted through the params hash.
 ```
 
 ### If You Finish Early...
