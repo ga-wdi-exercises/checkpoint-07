@@ -97,14 +97,17 @@ app.get('/', function(req,res) {
 
 app.post('/', function(req,res) {
   a.create(req.body.a)
+  res.redirect("/")
 })
 
 app.post('/', function(req,res) {
   a.findOneAndUpdate({})
+  res.redirect('/')
 })
 
 app.post('/delete',function(req,res){
   a.findOneAndRemove({})
+  res.redirect('/')
 
 })
 
