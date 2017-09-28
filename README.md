@@ -7,7 +7,10 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL database is a relational db whereas NoSQL database is a non-relational or distributed db
+SQl db are table based databases whereas NoSQL dbs are document based -  key - value paired
+NoSQL databases fits better for hierarchical data storage as it follows key-value pair way to store databases and they are preffered for large data set
+SQL dbs are used to complex query intensive enviornment
 ```
 
 ### Question 2
@@ -22,7 +25,11 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+const Author = mongoose.model("Author",AuthorSchema)
+
+var results = Author.find({name: "Bob"}
+    console.log(results)
+
 ```
 
 ### Question 3
@@ -35,7 +42,10 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+var result = Instructor.findOne({name: "Andy"})
+      console.log(result)
+      result.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})
+
 ```
 
 ### Question 4
@@ -52,8 +62,11 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
-```
+post '/author' do
+  @author = Author.create!(params[:name])
+  redirect "/authors"
+end
+
 
 ## Express
 
@@ -62,7 +75,8 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports is used to make the module accessible across different files
+eg: model is defined in a file and we use module.export {model} so that this model can be reffered in other files
 ```
 
 ### Question 6
@@ -75,7 +89,27 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get('/', function(req,res) {
+  a.find({})
+  res.render("index")
+
+})
+
+app.post('/', function(req,res) {
+  a.create(req.body.a)
+  res.redirect("/")
+})
+
+app.post('/', function(req,res) {
+  a.findOneAndUpdate({})
+  res.redirect('/')
+})
+
+app.post('/delete',function(req,res){
+  a.findOneAndRemove({})
+  res.redirect('/')
+
+})
 
 ```
 
@@ -84,7 +118,16 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails use postgrsql and ruby
+Rails use active record as ORM
+Rails have convention over configuration
+Rails generate all the required dependencies
+easy functions and manipulation
+
+Express  use mongodb and node js
+Express use mongoose as ORM
+have to install the dependencies you need
+
 ```
 
 ### Question 8
@@ -98,7 +141,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Parse incoming request bodies in a middleware before your handlers, available under the req.body property
+app.use(bodyParser.json()) basically tells the system that you want json to be used
+A new body object containing the parsed data is populated on the request object after the middleware . This object will contain key-value pairs, where the value can be a string or array (when extended is false), or any type (when extended is true).
 ```
 
 ### If You Finish Early...
