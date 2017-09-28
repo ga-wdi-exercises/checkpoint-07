@@ -7,7 +7,7 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are primarily relational and table based databases, whereas NoSQL database are usually non-relational or distributed databases that are document based. SQL databases have predefined schema whereas NoSQL databases have dynamic schema for unstructured data. You should use SQL databases when you have a well structured relational database. You should used NoSQL when either data is completely unstructured (videos, images, etc..) or it is semi-structured where the data has some form of hierarchy within itself (XML docs, JSON, BSON).
 ```
 
 ### Question 2
@@ -22,7 +22,8 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"} => {
+console.log(results)
 ```
 
 ### Question 3
@@ -35,7 +36,9 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+let andy = Instructor.find({name: "Andy"})
+andy.description = "Resin Laying Deer Figurine, Gold"
+
 ```
 
 ### Question 4
@@ -62,7 +65,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports is a special object which is included in every JS file in the Node.js application by default. It is a way to make a module availaible in other files.
 ```
 
 ### Question 6
@@ -75,7 +78,31 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/show", function (req, res) {
+    Something.findOne({}).then(function (something) {
+        res.send("GET request")
+        });
+    })
+});
+
+app.post("/create", (req, res) => {
+    Something.create().then(something => {
+        res.send("POST Request")
+    })
+})
+
+app.post("/update", (req, res) => {
+    Something.findOneAndUpdate().then(something => {
+        res.send("PUT Request");
+    })
+})
+
+
+app.post("/delete", (req, res) => {
+    Something.findOneAndRemove().then(something => {
+        res.send("DELETE")
+    })
+})
 
 ```
 
@@ -84,7 +111,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails is very opinionated as a back-end framework while express is not. Rails is a ORM and Express is not. Rails uses gems to manage dependencies while express uses npm. 
 ```
 
 ### Question 8
@@ -98,7 +125,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Requires body-parser, returns middleware that only parses json, and configures the parser to support html forms to process user input received through a form.
 ```
 
 ### If You Finish Early...
