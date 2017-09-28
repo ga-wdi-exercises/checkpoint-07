@@ -7,7 +7,10 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+A SQL database is a relational database and is table based. A NoSQL database is non-relational database is document and collection based.
+
+NoSQL is flexible, fast and allows the developer more creativity vs a SQL database which is strict on following convention over configuration.
+
 ```
 
 ### Question 2
@@ -15,14 +18,14 @@ Your answer...
 What's wrong with this Mongoose code and how might we fix it?
 
 ```js
-var results = AuthorModel.find({name: "Bob"})
-console.log(results)
+var results = AuthorModel.findOne({name: "Bob"})
+console.log(results);
 ```
 
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+// Because we have already told it in which model we want to look for the document
 ```
 
 ### Question 3
@@ -35,7 +38,7 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+//
 ```
 
 ### Question 4
@@ -52,7 +55,12 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+class Author
+def create
+ @author = Author.create!(author_params)
+  redirect_to "/authors/#{@author.id}"
+end
+end
 ```
 
 ## Express
@@ -62,7 +70,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+It allows us to export code from one file to another
 ```
 
 ### Question 6
@@ -75,7 +83,10 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+// app.get("/", (req, res) => {
+// res.render("GET")
+// })
+
 
 ```
 
@@ -84,7 +95,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Rails has a set convention to the way it orders files where as Express gives you more flexibilty in how the files are named, where they are placed and how many you use.
 ```
 
 ### Question 8
@@ -98,7 +109,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+This requires the body-parse package so it can be referenced later
+ It also configures the parser to support html forms
+
+
 ```
 
 ### If You Finish Early...
