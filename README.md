@@ -62,13 +62,11 @@ author.save(function(err){
 ```
 
 ```rb
-def initialize (name)
-  @name = name
+post '/author' do
+  @author = Author.create!(params[:name])
+  redirect "/authors"
 end
 
-var author = Author.create(name: @name)
-author.save
-```
 
 ## Express
 
