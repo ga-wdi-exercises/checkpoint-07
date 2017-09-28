@@ -89,20 +89,20 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-app.get('/', function(req,a) {
+app.get('/', function(req,res) {
   a.find({})
 
 })
 
-app.post('/', function(req,a) {
+app.post('/', function(req,res) {
   a.create(req.body.a)
 })
 
-app.post('/', function(req,a) {
+app.post('/', function(req,res) {
   a.findOneAndUpdate({})
 })
 
-app.post('/delete',function(req,a){
+app.post('/delete',function(req,res){
   a.findOneAndRemove({})
 
 })
