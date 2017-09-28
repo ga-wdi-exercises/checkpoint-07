@@ -7,7 +7,13 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL databases are relational whereas NoSQL databases are non-relational.
+SQL and other relational databases submit data in tables and rows; on the other
+hand, NoSQL databases and other non-relational databases represent data in collections
+of JSON documents. Relational databases are often used because they are easy to extend.
+You may use a non-relational database because you may need to store serialized
+arrays in JSON objects among other reasons.
+
 ```
 
 ### Question 2
@@ -22,7 +28,8 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorModel.find({name: "Bob"})
+console.log(results.name)
 ```
 
 ### Question 3
@@ -35,7 +42,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+var andy = InstructorModel.find({name: "Andy"})
+andy.wishlist_items.create(description: "Resin Laying Deer Figurine, Gold")
 ```
 
 ### Question 4
@@ -52,7 +60,8 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.create(name: this.name)
+#not sure about the rest or even ^^
 ```
 
 ## Express
@@ -62,7 +71,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+I don't understand this.
 ```
 
 ### Question 6
@@ -75,7 +84,7 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+// Not sure about this either
 
 ```
 
@@ -84,7 +93,8 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express is used as a framework for js, Rails is for ruby. Rails is very opinionated,
+Express not so much.
 ```
 
 ### Question 8
@@ -98,7 +108,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+Parses a json object?
 ```
 
 ### If You Finish Early...
