@@ -7,7 +7,8 @@
 Describe the differences between a SQL and NoSQL database, and when you might use each.
 
 ```text
-Your answer...
+SQL database would store the data as tables. NoSQL database would store the data in documents and collection form.
+I would use NoSQL in many projects since it is a little faster and I could have more freedom using it. I might also use SQL database when working on a rails application that would include many complicated relationship, in that case I personally prefer SQL database....
 ```
 
 ### Question 2
@@ -22,7 +23,8 @@ console.log(results)
 > Hint: Assuming there is a document with a name of "Bob", why does `results` not contain an author model on the second line?
 
 ```js
-// Your answer...
+var results = AuthorSchema.findOne({name: "Bob"})
+console.log(results)...
 ```
 
 ### Question 3
@@ -35,7 +37,8 @@ Convert the Ruby and ActiveRecord code below into Javascript and Mongoose code..
 ```
 
 ```js
-// Your answer...
+var andy = Instructor.findOne({name: "Andy"})
+andy.wishlist_items.create({description: "Resin Laying Deer Figurine, Gold"})...
 ```
 
 ### Question 4
@@ -52,7 +55,10 @@ author.save(function(err){
 ```
 
 ```rb
-# Your answer...
+@author = Author.new(name: @name)
+if author.save
+  redirect_to "/authors"
+end...
 ```
 
 ## Express
@@ -62,7 +68,7 @@ author.save(function(err){
 What is `module.exports` and why do we use it?
 
 ```text
-Your answer...
+module.exports allow the data to be accessed by other files. We use this technique to direct information needed to the right files where they are being used....
 ```
 
 ### Question 6
@@ -75,8 +81,35 @@ Then, make each route respond with a one-word string containing the RESTful acti
 var express = require("express")
 var app = express()
 
-// Your code starts here...
+app.get("/", (req, res) => {
+  var voters = Voters.find({})
+  res.render("voters-index", voters: voters)
+})
 
+app.post("/", (req, res) => {
+  Voters.create(req.body.voters).done(voter => {
+    res.redirect("/")
+  })
+})
+
+app.get("/:id", (req, res) => {
+  var voter = Voters.findOne({_id: req.params.id})
+  res.render("voters-show")
+})
+
+app.post("/:id", (req, res) => {
+  var voter = Voters.findOne({_id: req.params.id})
+  Voters.findOneAndUpdate({_id: req.params._id}, req.body.voter, {new: true}).then(voter => {
+    res.redirect(`/${req.params.id}`)
+  }).fail(err => {
+    console.log(err)
+  })
+})
+
+app.post("/:id", (req, res))
+  Voters.findOneAndDelete({_id: req.params._id}).then( => {
+    res.redirect("/")
+  })
 ```
 
 ### Question 7
@@ -84,7 +117,7 @@ var app = express()
 Describe the differences between Express and Rails as backend frameworks.
 
 ```text
-Your answer...
+Express backend frameworks is a lot more customizable than Rails which is a good advantage for someone with a clear picture of what exactly they want to build, express also makes it a little easier as far as writing less code and working with less files. On the other hand, Rails conventions limits the developer freedom by it does keep the developer on track with all the conventions. Also, Rails beats Express by far with their amazing error handling pages....
 ```
 
 ### Question 8
@@ -98,7 +131,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 ```
 
 ```text
-Your answer...
+We are defining the body-parser in the first line so it could be used on this file. We are then asking it to read the request page in json in order to identify the information. On the third line, we are asking body-parser to bring all the nested object, if this is not set to true then we will be parsing strings and arrays. ...
 ```
 
 ### If You Finish Early...
